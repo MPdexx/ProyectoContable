@@ -1,0 +1,17 @@
+#pane_principal{
+    -fx-background-color: #0097ed;
+}
+.pane_border{
+    -fx-background-radius:5px;
+    -fx-background-color:#fff;
+}
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 0);
+}
+.border{
+    -fx-background-radius: 5px;
+}
+.buttons{
+    -fx-background-color: transparent;
+
+}

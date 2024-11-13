@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stpane_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane fx:id="bdpane_principal" prefHeight="200.0" prefWidth="200.0" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css">
+         <left>
+            <Pane fx:id="pane_principal" prefHeight="700.0" prefWidth="214.0" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="145.0" text="Bienvenido" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_usuario" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="183.0" text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft JhengHei UI" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgv_usuario" fitHeight="123.0" fitWidth="141.0" layoutX="36.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </ImageView>
+                  <Button fx:id="btn_mantenimientos" layoutY="270.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="215.0" styleClass="buttons" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css" text="Mantenimientos" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="481.0" prefWidth="712.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="pn_MenuHome" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css" visible="false">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <styleClass>
+                        <String fx:value="pane_border" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
