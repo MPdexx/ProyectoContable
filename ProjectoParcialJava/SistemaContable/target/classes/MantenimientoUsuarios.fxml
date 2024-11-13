@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="@Css/MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="pane_border" />
+   </styleClass>
+   <children>
+      <Button fx:id="btn_mUsuarios" contentDisplay="CENTER" layoutX="92.0" layoutY="228.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" text="Mantenimiento de Usuarios" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button fx:id="btn_mCatalogo" contentDisplay="CENTER" layoutX="426.0" layoutY="228.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" text="Mantenimiento de Catálogo de Cuenta" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+   </children>
+</AnchorPane>

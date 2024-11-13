@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$" dumb="true">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Css" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Datos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Imagenes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Mantenimientos" isTestSource="false" />
+    </content>
+  </component>
+</module>
