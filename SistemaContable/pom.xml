@@ -65,6 +65,7 @@
               <noManPages>true</noManPages>
               <stripDebug>true</stripDebug>
               <noHeaderFiles>true</noHeaderFiles>
+
             </configuration>
           </execution>
         </executions>

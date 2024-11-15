@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stpane_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stpane_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.PrincipalController">
    <children>
-      <BorderPane fx:id="bdpane_principal" prefHeight="200.0" prefWidth="200.0" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css">
+      <BorderPane fx:id="bdpane_principal" prefHeight="200.0" prefWidth="200.0" stylesheets="@Css/MenuPrincipal.css">
          <left>
-            <Pane fx:id="pane_principal" prefHeight="700.0" prefWidth="214.0" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css" BorderPane.alignment="CENTER">
+            <Pane fx:id="pane_principal" prefHeight="700.0" prefWidth="214.0" style="-fx-background-color: #0097ed;" styleClass="pane_principal" stylesheets="@Css/MenuPrincipal.css" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="145.0" text="Bienvenido" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="145.0" text="Bienvenido" textFill="#fffbfb">
                      <font>
                         <Font name="Microsoft JhengHei UI Bold" size="22.0" />
                      </font>
@@ -33,17 +33,21 @@
                         <String fx:value="border" />
                      </styleClass>
                   </ImageView>
-                  <Button fx:id="btn_mantenimientos" layoutY="270.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="215.0" styleClass="buttons" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css" text="Mantenimientos" textFill="WHITE">
+                  <Button fx:id="btn_mantenimientos" layoutX="-1.0" layoutY="270.0" mnemonicParsing="false" onAction="#cMantenimientos" prefHeight="39.0" prefWidth="217.0" stylesheets="@Css/MenuPrincipal.css" text="Mantenimientos" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="borderbtn" />
+                     </styleClass>
                   </Button>
                </children></Pane>
          </left>
          <center>
-            <AnchorPane prefHeight="481.0" prefWidth="712.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="anpane_padre" prefHeight="481.0" prefWidth="712.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="pn_MenuHome" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="@../java/local/scontable/sistemacontable/Css/MenuPrincipal.css" visible="false">
+                  <AnchorPane fx:id="pn_MenuHome" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="@Css/MenuPrincipal.css">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -52,7 +56,6 @@
                         <String fx:value="shadow" />
                      </styleClass>
                   </AnchorPane>
-                  <AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" />
                </children>
             </AnchorPane>
          </center>

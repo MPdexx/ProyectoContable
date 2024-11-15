@@ -10,11 +10,18 @@ import java.io.IOException;
 public class SistemaContableMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(SistemaContableMain.class.getResource("Principal.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(SistemaContableMain.class.getResource("/Principal.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            scene.getStylesheets().add("/Css/MenuPrincipal.css");
+            stage.setTitle("Sistema Contable");
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception ex){
+            System.out.println(ex);
+        }
+
     }
 
     public static void main(String[] args) {
