@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stpane_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.PrincipalController">
+   <children>
+      <BorderPane fx:id="bdpane_principal" prefHeight="200.0" prefWidth="200.0" stylesheets="@Css/MenuPrincipal.css">
+         <left>
+            <Pane fx:id="pane_principal" prefHeight="700.0" prefWidth="214.0" style="-fx-background-color: #0097ed;" styleClass="pane_principal" stylesheets="@Css/MenuPrincipal.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="145.0" text="Bienvenido" textFill="#fffbfb">
+                     <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_usuario" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="183.0" text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft JhengHei UI" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgv_usuario" fitHeight="123.0" fitWidth="141.0" layoutX="36.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </ImageView>
+                  <Button fx:id="btn_mantenimientos" layoutX="-1.0" layoutY="270.0" mnemonicParsing="false" onAction="#changePanel_manteniminetos" prefHeight="39.0" prefWidth="217.0" stylesheets="@Css/MenuPrincipal.css" text="Mantenimientos" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="borderbtn" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btn_movimientos" layoutX="-1.0" layoutY="319.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="217.0" stylesheets="@Css/MenuPrincipal.css" text="Movimientos" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="borderbtn" />
+                     </styleClass>
+                  </Button>
+               </children></Pane>
+         </left>
+         <center>
+            <AnchorPane fx:id="anpane_padre" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="pn_menu" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="MenuPrincipal.css">
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="pane_border" />
+                     </styleClass>
+                     <children>
+                        <StackedBarChart layoutX="68.0" layoutY="77.0" prefHeight="238.0" prefWidth="314.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </StackedBarChart>
+                        <Label layoutX="116.0" layoutY="67.0" text="Total de ganancias del ultimo mes">
+                           <font>
+                              <Font name="Microsoft JhengHei UI" size="14.0" />
+                           </font>
+                        </Label>
+                        <PieChart layoutX="464.0" layoutY="77.0" prefHeight="238.0" prefWidth="314.0" />
+                        <Label layoutX="498.0" layoutY="67.0" text="Ganancias y pérdidas">
+                           <font>
+                              <Font name="Microsoft JhengHei UI" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

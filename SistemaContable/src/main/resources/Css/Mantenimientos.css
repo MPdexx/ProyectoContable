@@ -1,0 +1,18 @@
+.btn_save{
+    -fx-background-color: #01bc42;
+}
+.btn_edit{
+    -fx-background-color: #0069d1;
+}
+.btn_delete{
+    -fx-background-color: #c70000;
+}
+.btn_search{
+    -fx-background-color: #c7a100;
+}
+.btn_shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 8, 0.5, 3, 3);
+}
+#btn_return{
+    -fx-background-color: transparent;
+}
