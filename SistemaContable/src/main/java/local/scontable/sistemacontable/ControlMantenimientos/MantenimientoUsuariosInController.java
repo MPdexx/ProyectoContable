@@ -6,9 +6,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import local.scontable.sistemacontable.Clases.CambioPanel;
 import local.scontable.sistemacontable.Clases.Usuario;
 import local.scontable.sistemacontable.PrincipalController;
@@ -26,7 +30,9 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
     @FXML
     TableView<Usuario> tview_users;
     @FXML
-    TextField txtf_user, txtf_pass, txtf_NameUser, txtf_LastName, txtf_email;
+    TextField txtf_user, txtf_NameUser, txtf_LastName, txtf_email;
+    @FXML
+    PasswordField txtf_pass;
     @FXML
     Button btn_save, btn_edit, btn_delete;
     @FXML
@@ -34,11 +40,11 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
     @FXML
     TableColumn<Usuario, String> col_nUser, col_nUserReal, col_LnUser, col_pass, col_Email, col_LvlUser;
     ObservableList<Usuario> userList = FXCollections.observableArrayList();
-    private ChangeListener<String> listener;
 
     private static String archivo = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\usuarios.txt";
     private static String archivo1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\usuarios1.txt";
     private PrincipalController panelPadre;
+    private Man_UsuariosEditController nUsuario = new Man_UsuariosEditController();
 
 
     //Guardar los datos en un archivo de texto
@@ -76,7 +82,33 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
             }
         }
 
+        boolean usuarioExiste = false;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(";");
+                if (datos.length > 0 && datos[0].equals(nUser)) { // Validar por nombre de usuario
+                    usuarioExiste = true;
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+
+        // Si el usuario existe, mostrar un mensaje y salir
+        if (usuarioExiste) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Usuario ya existente");
+            alert.setContentText("El nombre de usuario ingresado ya está registrado.");
+            alert.showAndWait();
+            return; // Detener el proceso
+        }
+
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) {
+
+
                 writer.write(registro);
                 writer.newLine(); // Agregar un salto de línea al final
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -206,6 +238,72 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
 
     }
 
+    public void editData() throws IOException {
+        String nUser, nUserReal="", lnUser="", pass="", email="", lvlUser="";
+        nUser = txtf_user.getText();
+        File file = new File(archivo);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                System.out.println("Error al crear el archivo: " + e.getMessage());
+            }
+        }
+        boolean usuarioExiste = false;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(";");
+                if (datos.length == 6 && datos[0].equals(nUser)) { // Validar por nombre de usuario
+                    nUserReal = datos[1];
+                    lnUser = datos[2];
+                    pass = datos[3];
+                    if (datos[4].equals("1")){
+                        lvlUser = "Admin";
+                    }
+                    else {
+                        lvlUser = "Usuario";
+                    }
+                    email = datos[5];
+                    usuarioExiste = true;
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+
+        // Si el usuario existe, mostrar un mensaje y salir
+        if (usuarioExiste) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Mantenimientos/Man_UsuariosEdit.fxml"));
+                Parent root = loader.load();
+                nUsuario = loader.getController();
+                Stage stage = new Stage();
+                stage.setTitle("Editar Usuario");
+                nUsuario.getUser(nUser, nUserReal, lnUser, pass, lvlUser, email);
+                stage.setScene(new Scene(root));
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error al abrir la ventana");
+                alert.setContentText("No se pudo cargar la ventana de mantenimiento.");
+                alert.showAndWait();
+            }
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Usuario no existe");
+            alert.setContentText("El nombre de usuario ingresado no existe");
+            alert.showAndWait();
+            return; // Detener el proceso
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String[] usertype = {"Admin", "Usuario"};
@@ -257,6 +355,11 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
             );
             btn_delete.disableProperty().bind(areAllFilled1.not());
 
+            BooleanBinding areAllFilled2 = Bindings.createBooleanBinding(() ->
+                    !txtf_user.getText().trim().isEmpty(),
+                    txtf_user.textProperty()
+            );
+            btn_edit.disableProperty().bind(areAllFilled2.not());
 
         }catch (Exception ex){
             System.out.println(ex);
