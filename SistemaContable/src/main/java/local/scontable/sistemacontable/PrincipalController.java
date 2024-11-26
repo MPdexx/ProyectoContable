@@ -24,38 +24,35 @@ public class PrincipalController implements Initializable, CambioPanel {
     public PrincipalController panelMenu;
 
 
-
     @FXML
-    Button btn_mantenimientos;
+    Button btn_mantenimientos, btn_logout, btn_procesos;
     @FXML
     AnchorPane anpane_padre, pn_menu;
     @FXML
     Label lbl_usuario;
-    //@FXML
-    //ChoiceBox<String> cbox_optUser;
-    private String[] usrOptions = {"Cerrar sesión"};
+    private String acceso;
+    private MantenimientoUsuariosController access = new MantenimientoUsuariosController();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //cbox_optUser.getItems().addAll(usrOptions);
-        /*StringBinding binding = Bindings.createStringBinding(() ->
-            String.valueOf(cbox_optUser.getValue() != null),
-            cbox_optUser.valueProperty()
-        );*/
+
     }
 
     public void changePanel_manteniminetos(){
         try {
             cMantenimientos("/Mantenimientos/MantenimientoUsuarios.fxml");
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            access.loadMantenimientos(acceso);
+        } catch (Exception ex) {
+            System.out.println(ex);
         }
     }
     public void cMantenimientos(String fxml) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
             Pane rgpn = fxmlLoader.load();
+            if (fxml.equals("/Mantenimientos/MantenimientoUsuarios.fxml")){
+                access = fxmlLoader.getController();
+            }
             Object controller = fxmlLoader.getController();
             if (controller instanceof CambioPanel) {
                 ((CambioPanel) controller).setPanelPadre(this);
@@ -78,56 +75,44 @@ public class PrincipalController implements Initializable, CambioPanel {
         this.panelPadre = panelPadre;
     }
 
-    public void loadMantenimientos(String y) throws IOException {
-        System.out.println(y);
-        try {
-            if (y.equals("1")){
-                btn_mantenimientos.setVisible(true);
-            }
-            else{
-                btn_mantenimientos.setVisible(false);
-            }
-        }catch (Exception ex){
-            System.out.printf(String.valueOf(ex));
+    public void alType(String y){
+        this.acceso = y;
+        if(acceso.equals("1")){
+            btn_procesos.setDisable(false);
         }
-
+        else{
+            btn_procesos.setDisable(true);
+        }
     }
 
     public void displayUserName(String user){
-
         lbl_usuario.setText(user);
     }
 
-    /*public void UserOptions(ChoiceBox<String> cbox_optUser) {
-        String option = cbox_optUser.getValue();
-        if (option.equals("Cerrar sesión")){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmacion");
-            alert.setContentText("Está seguro de cerrar sesión?");
+    public void gotoMenu(){
+        anpane_padre.getChildren().clear();
+        anpane_padre.getChildren().add(pn_menu);
+    }
 
-            alert.showAndWait().ifPresent(response -> {
-                if (response == ButtonType.OK) {
-                    try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(SistemaContableMain.class.getResource("/Login.fxml"));
-                        Scene scene = new Scene(fxmlLoader.load());
-                        scene.getStylesheets().add("Css/Login.css");
-                        Stage stage = new Stage();
-                        stage.setTitle("R&P Asociados");
-                        stage.setResizable(false);
-                        stage.setScene(scene);
-                        stage.show();
+    public void LogOut(){
+        Stage stage = new Stage();
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(SistemaContableMain.class.getResource("/Login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            scene.getStylesheets().add("Css/Login.css");
+            stage.setTitle("R&P Asociados");
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
 
-                        Stage st = (Stage) cbox_optUser.getScene().getWindow();
-                        st.close();
-                    }catch (Exception ex){
-                        System.out.printf(String.valueOf(ex));
-                    }
+            stage = (Stage) btn_logout.getScene().getWindow();
+            stage.close();
+        }catch (Exception ex){
+            System.out.println(ex);
 
-                } else {
+        }
 
-                }
-            });
-        }*/
+    }
 }
 
 

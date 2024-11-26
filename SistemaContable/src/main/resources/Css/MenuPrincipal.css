@@ -27,3 +27,9 @@
 .btnopc{
     -fx-background-radius: 10px;
 }
+.fade{
+    -fx-background-color: linear-gradient(to right,#0097ed, #00d9ad);
+}
+.btn_shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 8, 0.5, 3, 3);
+}

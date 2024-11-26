@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import local.scontable.sistemacontable.Clases.CambioPanel;
 import local.scontable.sistemacontable.PrincipalController;
 import local.scontable.sistemacontable.SistemaContableMain;
@@ -18,10 +19,12 @@ import java.util.ResourceBundle;
 
 public class MantenimientoUsuariosController implements Initializable, CambioPanel {
     @FXML
-    Button btnMantenimientoUsuarios;
+    Button btn_return, btn_mUsuarios;
     private PrincipalController panelPadre;
     @FXML
     AnchorPane pn_mantenimientos;
+
+    private PrincipalController gt;
 
     public void cMantenimientoUsuarios() throws Exception{
 
@@ -36,7 +39,20 @@ public class MantenimientoUsuariosController implements Initializable, CambioPan
 
     }
 
+    public void loadMantenimientos(String y) throws IOException {
+        System.out.println(y);
+        try {
+            if (y.equals("1")){
+                btn_mUsuarios.setDisable(false);
+            }
+            else{
+                btn_mUsuarios.setDisable(true);
+            }
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
 
+    }
 
     @Override
     public void setPanelPadre(PrincipalController panelPadre) {
@@ -44,12 +60,12 @@ public class MantenimientoUsuariosController implements Initializable, CambioPan
     }
 
     public void returnMenu() throws IOException {
-
-
+        panelPadre.gotoMenu();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.pn_mantenimientos.setVisible(true);
+
     }
 }

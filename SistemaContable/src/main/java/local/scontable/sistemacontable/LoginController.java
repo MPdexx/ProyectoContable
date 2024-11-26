@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import local.scontable.sistemacontable.ControlMantenimientos.MantenimientoUsuariosController;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -65,12 +66,13 @@ public class LoginController implements Initializable {
                         if (nivelAcceso.equals("1")) { // Es admin
                             System.out.println("1");
                            openPrincipal();
-                            acceso.loadMantenimientos("1");
+                            acceso.alType("1");
                             displayName.displayUserName(nUser);
                         } else {
                             System.out.println("0");
                             openPrincipal();
-                            acceso.loadMantenimientos("0");
+                            acceso.alType("0");
+                            displayName.displayUserName(nUser);
                         }
                         Stage stage = (Stage) btn_login.getScene().getWindow();
                         stage.close();

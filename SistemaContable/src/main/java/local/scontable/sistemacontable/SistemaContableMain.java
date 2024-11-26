@@ -21,7 +21,6 @@ public class SistemaContableMain extends Application {
             stage.show();
         }catch (Exception ex){
             System.out.println(ex);
-            System.out.println("hola");
 
         }
 

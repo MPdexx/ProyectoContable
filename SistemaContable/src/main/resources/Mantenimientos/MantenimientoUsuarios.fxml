@@ -6,17 +6,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoUsuariosController">
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="/MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoUsuariosController">
    <styleClass>
       <String fx:value="shadow" />
       <String fx:value="pane_border" />
    </styleClass>
    <children>
-      <Button fx:id="btn_mUsuarios" contentDisplay="CENTER" layoutX="125.0" layoutY="228.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cMantenimientoUsuarios" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="@MenuPrincipal.css" text="Mantenimiento de Usuarios" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button fx:id="btn_mCatalogo" contentDisplay="CENTER" layoutX="533.0" layoutY="228.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="@../../../../../resources/Css/MenuPrincipal.css" text="Mantenimiento de Catálogo de Cuenta" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="43.0" stylesheets="@../Css/MenuPrincipal.css">
+      <Button fx:id="btn_mUsuarios" contentDisplay="CENTER" layoutX="125.0" layoutY="228.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cMantenimientoUsuarios" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/MenuPrincipal.css" text="Mantenimiento de Usuarios" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button fx:id="btn_mCatalogo" contentDisplay="CENTER" layoutX="533.0" layoutY="228.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/MenuPrincipal.css" text="Mantenimiento de Catálogo de Cuenta" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button fx:id="btn_return" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnMenu" prefHeight="32.0" prefWidth="43.0">
          <graphic>
-            <ImageView fx:id="btn_return" fitHeight="24.0" fitWidth="31.0" onDragDetected="#returnMenu" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="31.0" onDragDetected="#returnMenu" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/return.png" />
                </image>

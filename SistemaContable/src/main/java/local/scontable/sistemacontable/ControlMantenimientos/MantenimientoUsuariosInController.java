@@ -14,11 +14,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import local.scontable.sistemacontable.Clases.CambioPanel;
+import local.scontable.sistemacontable.Clases.EnDeCrypt;
 import local.scontable.sistemacontable.Clases.Usuario;
 import local.scontable.sistemacontable.PrincipalController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
+import javax.crypto.SecretKey;
 import javax.swing.event.DocumentListener;
 import java.io.*;
 import java.net.URL;
@@ -390,8 +392,9 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
     }
 
     //Carga el archivo para el tableview
-    private void loadFile(String archivo) {
-
+    private void loadFile(String archivo) throws Exception {
+        EnDeCrypt crypt = new EnDeCrypt();
+        SecretKey key = crypt.generateKey();
             try{
                 File file = new File(archivo);
                 if (!file.exists()) {
@@ -410,7 +413,8 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
                                 } else {
                                     Lvl_user = "Usuario";
                                 }
-                                Usuario usuario = new Usuario(datos[0], datos[1], datos[2], datos[3], Lvl_user, datos[5]);
+                                String pass = crypt.encrypt(datos[3], key);
+                                Usuario usuario = new Usuario(datos[0], datos[1], datos[2], pass, Lvl_user, datos[5]);
                                 userList.add(usuario);
 
                             }
