@@ -4,6 +4,7 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,6 +43,7 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
     @FXML
     TableColumn<Usuario, String> col_nUser, col_nUserReal, col_LnUser, col_pass, col_Email, col_LvlUser;
     ObservableList<Usuario> userList = FXCollections.observableArrayList();
+    private FilteredList<Usuario> filteredData;
 
     private static String archivo = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\usuarios.txt";
     private static String archivo1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\usuarios1.txt";
@@ -324,11 +326,84 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
 
         try{
             userList = FXCollections.observableArrayList();
+            filteredData = new FilteredList<>(userList,p-> true);
             loadFile(archivo);
-            tview_users.setItems(userList);
+            tview_users.setItems(filteredData);
         }catch (Exception ex){
             System.out.println(ex);
         }
+
+        // Vincular el filtro al TextField
+        txtf_user.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(usuario -> {
+                // Si el filtro está vacío, mostrar todos los datos
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                // Comparar cada campo del usuario con el filtro
+                if (usuario.getNUser().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Coincide con el nombre de usuario
+                }
+                return false; // No hay coincidencias
+            });
+        });
+
+        // Vincular el filtro al TextField
+        txtf_NameUser.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(usuario -> {
+                // Si el filtro está vacío, mostrar todos los datos
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                // Comparar cada campo del usuario con el filtro
+                if (usuario.getNUserReal().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Coincide con el nombre real
+                }
+                return false; // No hay coincidencias
+            });
+        });
+
+        // Vincular el filtro al TextField
+        txtf_LastName.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(usuario -> {
+                // Si el filtro está vacío, mostrar todos los datos
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                // Comparar cada campo del usuario con el filtro
+                if (usuario.getLnUser().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Coincide con los apellidos
+                }
+                return false; // No hay coincidencias
+            });
+        });
+
+        // Vincular el filtro al TextField
+        txtf_email.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(usuario -> {
+                // Si el filtro está vacío, mostrar todos los datos
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                // Comparar cada campo del usuario con el filtro
+                if (usuario.getEmail().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Coincide con el correo
+                }
+                return false; // No hay coincidencias
+            });
+        });
 
         //condiciona si los campos estan llenos para activar los botones
         try{

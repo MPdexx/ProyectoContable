@@ -67,7 +67,7 @@ public class Man_UsuariosEditController implements Initializable {
                     String nUserReal = txtf_NameUserEdit.getText().isEmpty() ? datos[1] : txtf_NameUserEdit.getText();
                     String lnUser = txtf_LastNameEdit.getText().isEmpty() ? datos[2] : txtf_LastNameEdit.getText();
                     String pass = txtf_passEdit.getText().isEmpty() ? datos[3] : txtf_passEdit.getText();
-                    String lvlUser = String.valueOf(cbox_LvlUser.getValue()) == null ? datos[4] : (String.valueOf(cbox_LvlUser.getValue()).equals("Admin") ? "1" : "0");
+                    String lvlUser = cbox_LvlUser.getValue() == null ? datos[4] : (String.valueOf(cbox_LvlUser.getValue()).equals("Admin") ? "1" : "0");
                     String email = txtf_emailEdit.getText().isEmpty() ? datos[5] : txtf_emailEdit.getText();
 
                     // Escribir los datos editados en el archivo temporal

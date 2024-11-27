@@ -1,5 +1,5 @@
 admin;Moises;Perez;1234;1;mperez
-Dex;tony;gambino;admin;1;ejemplo@gmail.com
+Dex;tony;gambino;admin;1;example@gmail.com
 sample;Sam;ple;pass;0;sampletext@gmail.com
 hola;Sanky;Panky;puedeser;0;Sin correo
 fmj;Fausto;Martinez;123;1;Sin correo
