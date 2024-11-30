@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stpane_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.PrincipalController">
+<StackPane fx:id="stpane_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.PrincipalController">
    <children>
       <BorderPane fx:id="bdpane_principal" prefHeight="200.0" prefWidth="200.0" stylesheets="@Css/MenuPrincipal.css">
          <left>
@@ -71,7 +71,7 @@
                         <String fx:value="borderbtn" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="btn_Consultas" layoutX="-1.0" layoutY="418.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="217.0" stylesheets="@Css/MenuPrincipal.css" text="Consultas" textFill="WHITE">
+                  <Button fx:id="btn_consultas" layoutX="-1.0" layoutY="418.0" mnemonicParsing="false" onAction="#changePanel_consultas" prefHeight="39.0" prefWidth="217.0" stylesheets="@Css/MenuPrincipal.css" text="Consultas" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -94,7 +94,7 @@
          <center>
             <AnchorPane fx:id="anpane_padre" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="pn_menu" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="MenuPrincipal.css">
+                  <AnchorPane fx:id="pn_menu" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="MenuPrincipal.css">
                      <styleClass>
                         <String fx:value="shadow" />
                         <String fx:value="pane_border" />

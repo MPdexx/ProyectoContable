@@ -25,7 +25,7 @@ public class PrincipalController implements Initializable, CambioPanel {
 
 
     @FXML
-    Button btn_mantenimientos, btn_logout, btn_procesos;
+    Button btn_mantenimientos, btn_logout, btn_procesos, btn_consultas;
     @FXML
     AnchorPane anpane_padre, pn_menu;
     @FXML
@@ -46,6 +46,15 @@ public class PrincipalController implements Initializable, CambioPanel {
             System.out.println(ex);
         }
     }
+
+    public void changePanel_consultas(){
+        try {
+            cMantenimientos("/Consultas/ConsultaGen.fxml");
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
     public void cMantenimientos(String fxml) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));

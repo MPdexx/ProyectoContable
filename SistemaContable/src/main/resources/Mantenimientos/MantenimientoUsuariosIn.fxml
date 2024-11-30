@@ -14,73 +14,73 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="866.0" stylesheets="/MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoUsuariosInController">
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoUsuariosInController">
    <styleClass>
       <String fx:value="shadow" />
       <String fx:value="pane_border" />
    </styleClass>
    <children>
-      <Label layoutX="70.0" layoutY="372.0" text="Nombre de Usuario">
+      <Label layoutX="146.0" layoutY="372.0" text="Nombre de Usuario">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtf_user" layoutX="70.0" layoutY="398.0" prefHeight="32.0" prefWidth="233.0">
+      <TextField fx:id="txtf_user" layoutX="146.0" layoutY="398.0" prefHeight="32.0" prefWidth="233.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Label layoutX="351.0" layoutY="372.0" text="Contraseña">
+      <Label layoutX="427.0" layoutY="372.0" text="Contraseña">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TableView fx:id="tview_users" layoutX="71.0" layoutY="52.0" prefHeight="287.0" prefWidth="723.0">
+      <TableView fx:id="tview_users" layoutX="121.0" layoutY="52.0" prefHeight="287.0" prefWidth="794.0">
         <columns>
           <TableColumn fx:id="col_nUser" prefWidth="121.60005950927734" text="Nombre de usuario" />
           <TableColumn fx:id="col_nUserReal" prefWidth="128.7999267578125" text="Nombre real" />
-            <TableColumn fx:id="col_LnUser" prefWidth="132.800048828125" text="Apellidos" />
-            <TableColumn fx:id="col_pass" prefWidth="98.39999389648438" text="Contraseña" />
-            <TableColumn fx:id="col_LvlUser" prefWidth="99.20001220703125" text="Nivel de acceso" />
-            <TableColumn fx:id="col_Email" prefWidth="140.79998779296875" text="Correo Electronico" />
+            <TableColumn fx:id="col_LnUser" prefWidth="158.40005493164062" text="Apellidos" />
+            <TableColumn fx:id="col_pass" prefWidth="98.4000244140625" text="Contraseña" />
+            <TableColumn fx:id="col_LvlUser" prefWidth="106.39996337890625" text="Nivel de acceso" />
+            <TableColumn fx:id="col_Email" prefWidth="177.59995117187498" text="Correo Electronico" />
         </columns>
       </TableView>
-      <Label layoutX="70.0" layoutY="446.0" text="Nombre Real">
+      <Label layoutX="146.0" layoutY="446.0" text="Nombre Real">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtf_NameUser" layoutX="70.0" layoutY="472.0" prefHeight="32.0" prefWidth="234.0">
+      <TextField fx:id="txtf_NameUser" layoutX="146.0" layoutY="472.0" prefHeight="32.0" prefWidth="234.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Label layoutX="351.0" layoutY="443.0" text="Apellidos">
+      <Label layoutX="427.0" layoutY="443.0" text="Apellidos">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtf_LastName" layoutX="351.0" layoutY="469.0" prefHeight="32.0" prefWidth="255.0">
+      <TextField fx:id="txtf_LastName" layoutX="427.0" layoutY="469.0" prefHeight="32.0" prefWidth="255.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Label layoutX="70.0" layoutY="522.0" text="Correo Electrónico">
+      <Label layoutX="146.0" layoutY="522.0" text="Correo Electrónico">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtf_email" layoutX="70.0" layoutY="548.0" prefHeight="32.0" prefWidth="317.0">
+      <TextField fx:id="txtf_email" layoutX="146.0" layoutY="548.0" prefHeight="32.0" prefWidth="317.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <ChoiceBox fx:id="cbox_LvlUser" layoutX="643.0" layoutY="398.0" prefHeight="32.0" prefWidth="150.0">
+      <ChoiceBox fx:id="cbox_LvlUser" layoutX="719.0" layoutY="398.0" prefHeight="32.0" prefWidth="150.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ChoiceBox>
-      <Label layoutX="643.0" layoutY="372.0" text="Tipo de usuario">
+      <Label layoutX="719.0" layoutY="372.0" text="Tipo de usuario">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btn_edit" layoutX="525.0" layoutY="538.0" mnemonicParsing="false" onAction="#editData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Editar" textFill="WHITE">
+      <Button fx:id="btn_edit" layoutX="601.0" layoutY="538.0" mnemonicParsing="false" onAction="#editData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Editar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -91,7 +91,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="btn_delete" layoutX="644.0" layoutY="538.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Eliminar" textFill="WHITE">
+      <Button fx:id="btn_delete" layoutX="720.0" layoutY="538.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Eliminar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -111,7 +111,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btn_save" layoutX="405.0" layoutY="538.0" mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Guardar" textFill="WHITE">
+      <Button fx:id="btn_save" layoutX="481.0" layoutY="538.0" mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Guardar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -123,7 +123,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_reload" layoutX="768.0" layoutY="14.0" mnemonicParsing="false" onAction="#reload" text="Button" />
-      <PasswordField fx:id="txtf_pass" layoutX="351.0" layoutY="398.0" prefHeight="32.0" prefWidth="203.0" />
+      <Button fx:id="btn_reload" layoutX="768.0" layoutY="14.0" mnemonicParsing="false" onAction="#reload" text="Actualizar" />
+      <PasswordField fx:id="txtf_pass" layoutX="427.0" layoutY="398.0" prefHeight="32.0" prefWidth="203.0" />
    </children>
 </AnchorPane>

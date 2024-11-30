@@ -24,7 +24,6 @@ public class MantenimientoUsuariosController implements Initializable, CambioPan
     @FXML
     AnchorPane pn_mantenimientos;
 
-    private PrincipalController gt;
 
     public void cMantenimientoUsuarios() throws Exception{
 
@@ -37,6 +36,16 @@ public class MantenimientoUsuariosController implements Initializable, CambioPan
             System.out.printf(String.valueOf(ex));
         }
 
+    }
+    public void cMantenimientoCatalogo(){
+        try {
+            if (panelPadre != null){
+                panelPadre.cMantenimientos("/Mantenimientos/MantenimientoCatalogoCuentaIn.fxml");
+            }
+
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
     }
 
     public void loadMantenimientos(String y) throws IOException {
