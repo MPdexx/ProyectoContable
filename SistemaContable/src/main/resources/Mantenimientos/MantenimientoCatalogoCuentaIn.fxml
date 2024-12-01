@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoCatalogoCuentaInController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="pane_border" />
+   </styleClass>
+   <children>
+      <Label layoutX="178.0" layoutY="373.0" text="Número de cuenta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtf_nCuenta" layoutX="178.0" layoutY="399.0" prefHeight="32.0" prefWidth="133.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label layoutX="364.0" layoutY="373.0" text="Descripción de la cuenta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tview_cuenta" layoutX="11.0" layoutY="52.0" prefHeight="287.0" prefWidth="993.0">
+         <columns>
+            <TableColumn fx:id="col_nUser" prefWidth="112.79999160766602" text="Número de Cuenta" />
+            <TableColumn fx:id="col_nUserReal" prefWidth="98.4000244140625" text="Descripción" />
+            <TableColumn fx:id="col_LnUser" prefWidth="87.99998474121094" text="Tipo" />
+            <TableColumn fx:id="col_pass" prefWidth="56.79998779296875" text="Nivel" />
+            <TableColumn fx:id="col_LvlUser" prefWidth="84.0" text="Cuenta Padre" />
+            <TableColumn fx:id="col_Email" prefWidth="86.39996337890625" text="Grupo" />
+            <TableColumn prefWidth="92.0" text="Fecha de creación" />
+            <TableColumn prefWidth="92.0" text="Hora de creacion" />
+            <TableColumn prefWidth="92.0" text="Débito acumulado" />
+            <TableColumn prefWidth="92.0" text="Crédito acumulado" />
+            <TableColumn prefWidth="97.60000000000002" text="Balance" />
+         </columns>
+      </TableView>
+      <Label layoutX="364.0" layoutY="447.0" text="Cuenta Padre">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtf_CuentaPadre" layoutX="364.0" layoutY="473.0" prefHeight="32.0" prefWidth="133.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label layoutX="657.0" layoutY="444.0" text="Grupo de cuenta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="cbox_tipoCuenta" layoutX="657.0" layoutY="399.0" prefHeight="32.0" prefWidth="134.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label layoutX="657.0" layoutY="373.0" text="Tipo de cuenta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_edit" layoutX="497.0" layoutY="557.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Editar" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn_edit" />
+            <String fx:value="btn_shadow" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_delete" layoutX="616.0" layoutY="557.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn_delete" />
+            <String fx:value="btn_shadow" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_return" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnMenu" prefHeight="32.0" prefWidth="43.0">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="31.0" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/return.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btn_save" layoutX="377.0" layoutY="557.0" mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Guardar" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn_save" />
+            <String fx:value="btn_shadow" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ChoiceBox fx:id="cbox_nivelCuenta" layoutX="178.0" layoutY="473.0" prefHeight="32.0" prefWidth="110.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label layoutX="178.0" layoutY="447.0" text="Nivel de cuenta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtf_desCuenta" layoutX="364.0" layoutY="399.0" prefHeight="32.0" prefWidth="255.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ChoiceBox fx:id="cbox_grupoCuenta" layoutX="657.0" layoutY="473.0" prefHeight="32.0" prefWidth="134.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label layoutX="933.0" layoutY="21.0" text="Label" textAlignment="RIGHT" />
+   </children>
+</AnchorPane>
