@@ -70,7 +70,7 @@ public class PrincipalController implements Initializable, CambioPanel {
             rgpn.getStylesheets().add(getClass().getResource("/Css/Mantenimientos.css").toExternalForm());
             CargarPHijo(rgpn);
         }catch (Exception ex){
-            System.out.printf(String.valueOf(ex));
+            ex.printStackTrace();
         }
     }
 

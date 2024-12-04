@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/MenuPrincipal.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoCatalogoCuentaInController">
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/Css/Mantenimientos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlMantenimientos.MantenimientoCatalogoCuentaInController">
    <styleClass>
       <String fx:value="shadow" />
       <String fx:value="pane_border" />
@@ -74,7 +74,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btn_edit" layoutX="497.0" layoutY="557.0" mnemonicParsing="false" onAction="#editData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Editar" textFill="WHITE">
+      <Button fx:id="btn_edit" layoutX="497.0" layoutY="557.0" mnemonicParsing="false" onAction="#editData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Editar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -86,7 +86,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_delete" layoutX="616.0" layoutY="557.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Eliminar" textFill="WHITE">
+      <Button fx:id="btn_delete" layoutX="616.0" layoutY="557.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Eliminar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -110,7 +110,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_save" layoutX="377.0" layoutY="557.0" mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Guardar" textFill="WHITE">
+      <Button fx:id="btn_save" layoutX="377.0" layoutY="557.0" mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Guardar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>

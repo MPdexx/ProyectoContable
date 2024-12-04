@@ -258,7 +258,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
 
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(";");
-                if (datos.length == 6 && datos[0].equals(nCuenta)) { // Validar por nombre de usuario
+                if (datos.length == 6 && datos[0].equals(String.valueOf(nCuenta))) { // Validar por nombre de usuario
                     desCuenta = datos[1];
                     tipoCuenta = Boolean.parseBoolean(datos[2]);
                     nivelCuenta = Integer.parseInt(datos[3]);

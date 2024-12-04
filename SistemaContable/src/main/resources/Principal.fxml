@@ -94,7 +94,7 @@
          <center>
             <AnchorPane fx:id="anpane_padre" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="pn_menu" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="MenuPrincipal.css">
+                  <AnchorPane fx:id="pn_menu" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/Css/MenuPrincipal.css">
                      <styleClass>
                         <String fx:value="shadow" />
                         <String fx:value="pane_border" />

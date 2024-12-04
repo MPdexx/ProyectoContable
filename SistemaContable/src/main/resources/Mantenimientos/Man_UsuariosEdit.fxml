@@ -112,7 +112,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Button fx:id="btn_save" layoutX="415.0" layoutY="548.0" mnemonicParsing="false" onAction="#SaveChanges" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Guardar" textFill="WHITE">
+      <Button fx:id="btn_save" layoutX="415.0" layoutY="548.0" mnemonicParsing="false" onAction="#SaveChanges" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Guardar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -124,7 +124,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_cancel" layoutX="527.0" layoutY="548.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Cancelar" textFill="WHITE">
+      <Button fx:id="btn_cancel" layoutX="527.0" layoutY="548.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
