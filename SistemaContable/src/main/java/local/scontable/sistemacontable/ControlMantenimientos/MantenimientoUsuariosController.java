@@ -43,8 +43,8 @@ public class MantenimientoUsuariosController implements Initializable, CambioPan
                 panelPadre.cMantenimientos("/Mantenimientos/MantenimientoCatalogoCuentaIn.fxml");
             }
 
-        }catch (Exception ex){
-            System.out.printf(String.valueOf(ex));
+        }catch (IOException ex){
+            ex.printStackTrace();
         }
     }
 

@@ -36,17 +36,17 @@
       </Label>
       <TableView fx:id="tview_cuenta" layoutX="11.0" layoutY="52.0" prefHeight="287.0" prefWidth="993.0">
          <columns>
-            <TableColumn fx:id="col_nUser" prefWidth="112.79999160766602" text="Número de Cuenta" />
-            <TableColumn fx:id="col_nUserReal" prefWidth="98.4000244140625" text="Descripción" />
-            <TableColumn fx:id="col_LnUser" prefWidth="87.99998474121094" text="Tipo" />
-            <TableColumn fx:id="col_pass" prefWidth="56.79998779296875" text="Nivel" />
-            <TableColumn fx:id="col_LvlUser" prefWidth="84.0" text="Cuenta Padre" />
-            <TableColumn fx:id="col_Email" prefWidth="86.39996337890625" text="Grupo" />
-            <TableColumn prefWidth="92.0" text="Fecha de creación" />
-            <TableColumn prefWidth="92.0" text="Hora de creacion" />
-            <TableColumn prefWidth="92.0" text="Débito acumulado" />
-            <TableColumn prefWidth="92.0" text="Crédito acumulado" />
-            <TableColumn prefWidth="97.60000000000002" text="Balance" />
+            <TableColumn fx:id="col_nCuenta" prefWidth="112.79999160766602" text="Número de Cuenta" />
+            <TableColumn fx:id="col_desCuenta" prefWidth="98.4000244140625" text="Descripción" />
+            <TableColumn fx:id="col_tipo" prefWidth="87.99998474121094" text="Tipo" />
+            <TableColumn fx:id="col_lvl" prefWidth="56.79998779296875" text="Nivel" />
+            <TableColumn fx:id="col_cuentaPadre" prefWidth="84.0" text="Cuenta Padre" />
+            <TableColumn fx:id="col_grupo" prefWidth="86.39996337890625" text="Grupo" />
+            <TableColumn fx:id="col_fCreacion" prefWidth="92.0" text="Fecha de creación" />
+            <TableColumn fx:id="col_hCreacion" prefWidth="92.0" text="Hora de creacion" />
+            <TableColumn fx:id="col_DebitoAc" prefWidth="92.0" text="Débito acumulado" />
+            <TableColumn fx:id="col_CreditoAc" prefWidth="92.0" text="Crédito acumulado" />
+            <TableColumn fx:id="col_Balance" prefWidth="97.60000000000002" text="Balance" />
          </columns>
       </TableView>
       <Label layoutX="364.0" layoutY="447.0" text="Cuenta Padre">
@@ -74,7 +74,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btn_edit" layoutX="497.0" layoutY="557.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Editar" textFill="WHITE">
+      <Button fx:id="btn_edit" layoutX="497.0" layoutY="557.0" mnemonicParsing="false" onAction="#editData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Editar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -86,7 +86,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_delete" layoutX="616.0" layoutY="557.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Eliminar" textFill="WHITE">
+      <Button fx:id="btn_delete" layoutX="616.0" layoutY="557.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Eliminar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -106,6 +106,9 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btn_save" layoutX="377.0" layoutY="557.0" mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Mantenimientos.css" text="Guardar" textFill="WHITE">
          <font>
@@ -139,6 +142,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <Label layoutX="933.0" layoutY="21.0" text="Label" textAlignment="RIGHT" />
+      <Label fx:id="lbl_date" layoutX="833.0" layoutY="21.0" text="Label" textAlignment="RIGHT" />
+      <Label fx:id="lbl_hour" layoutX="911.0" layoutY="22.0" text="Label" />
    </children>
 </AnchorPane>
