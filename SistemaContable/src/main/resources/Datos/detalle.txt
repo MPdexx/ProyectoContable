@@ -1,1 +1,20 @@
-fact-001;001;2;12012.0;0.0;
+fact-001;001;2;120.0;0.0;nigga
+Fact-002;001;2;100.0;0.0;Sin comentarios
+Fact-003;001;2;30.0;0.0;Sin comentarios
+fact-010;001;2;0.0;3.0;Sin comentarios
+fact-010;002;2;3.0;0.0;Sin comentarios
+fact1;001;2;132.0;0.0;Sin comentarios
+pito;23;2;33.0;0.0;Sin comentarios
+facto1;001;2;200.0;0.0;Sin comentarios
+facto1;002;2;0.0;30.0;Sin comentarios
+Fact-100;001;2;200.0;0.0;Sin comentarios
+Fact-100;002;2;0.0;30.0;Sin comentarios
+Fact-100;003;2;0.0;170.0;olas
+facto-0102;001;2;70.0;0.0;Sin comentarios
+facto-0102;002;2;0.0;70.0;Sin comentarios
+nigga;001;2;777.0;0.0;Sin comentarios
+nigga;002;2;0.0;777.0;Sin comentarios
+Factos-1223;001;2;0.0;20.0;Sin comentarios
+Factos-1223;002;2;21.0;0.0;Sin comentarios
+Factos-1223;003;2;1.0;0.0;Sin comentarios
+Factos-1223;004;2;0.0;2.0;Sin comentarios

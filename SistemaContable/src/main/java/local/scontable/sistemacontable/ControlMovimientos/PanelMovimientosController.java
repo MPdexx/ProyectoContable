@@ -39,6 +39,7 @@ public class PanelMovimientosController implements Initializable {
     private static String archivoC = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cabecera.txt";
     private static String archivoD = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\detalle.txt";
     private String usuario;
+    private int cont=0;
     private ControladorFechaHora controladorFechaHora = new ControladorFechaHora();
     ObservableList<Detalle> listaDetalle = FXCollections.observableArrayList();
 
@@ -50,7 +51,7 @@ public class PanelMovimientosController implements Initializable {
         cuentaContable = txtf_Cuenta.getText();
         vDebito = txtf_Debito.getText().isEmpty() ? 0 : Float.parseFloat(txtf_Debito.getText());
         vCredito = txtf_Credito.getText().isEmpty() ? 0 : Float.parseFloat(txtf_Credito.getText());
-        comentario = txtf_Comentario.getText().isEmpty() ? "" : txtf_Comentario.getText();
+        comentario = txtf_Comentario.getText().isEmpty() ? "Sin comentarios" : txtf_Comentario.getText();
 
         File file = new File(archivo);
         File file1 = new File(archivoD);
@@ -122,20 +123,15 @@ public class PanelMovimientosController implements Initializable {
                 alert.setHeaderText("Guardado correctamente");
                 alert.setContentText("Datos guardados correctamente");
                 alert.showAndWait();
-                reload();
-                if (vDebito > vCredito){
-                    txtf_Monto.setText(String.valueOf(vDebito));
-                }
-                else {
-                    txtf_Monto.setText(String.valueOf(vCredito));
-                }
+
                 txtf_nDocumento.setDisable(true);
                 txtf_Secuencia.setText("");
                 txtf_Cuenta.setText("");
                 txtf_Debito.setText("");
                 txtf_Credito.setText("");
                 txtf_Comentario.setText("");
-                reload();
+                cont+=1;
+
             } catch (IOException e) {
                 Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Error");
@@ -144,6 +140,34 @@ public class PanelMovimientosController implements Initializable {
                 alert1.showAndWait();
             }
 
+        }
+        float totalDebito = 0;
+        float totalCredito = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivoD))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(";"); // Asume que los datos están separados por comas
+                if (datos.length >= 6 && datos[0].equals(nDocumento)) {
+                    // Parsear los campos necesarios
+                    float debito = Float.parseFloat(datos[3]); // vDebito
+                    float credito = Float.parseFloat(datos[4]); // vCredito
+                    // Sumar los valores
+                    totalDebito += debito;
+                    totalCredito += credito;
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if (totalDebito > totalCredito){
+            txtf_Monto.setText(String.valueOf(totalDebito));
+        }
+        else {
+            txtf_Monto.setText(String.valueOf(totalCredito));
+        }
+        reload();
+        if (cont>=2){
+            btn_save.setDisable(false);
         }
 
     }
@@ -161,15 +185,14 @@ public class PanelMovimientosController implements Initializable {
         float totalDebito = 0;
         float totalCredito = 0;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivoD))) {
             String linea;
             while ((linea = reader.readLine()) != null) {
-                String[] datos = linea.split(","); // Asume que los datos están separados por comas
-                if (datos.length >= 6) {
+                String[] datos = linea.split(";"); // Asume que los datos están separados por comas
+                if (datos.length >= 6 && datos[0].equals(nDocumento)) {
                     // Parsear los campos necesarios
                     float debito = Float.parseFloat(datos[3]); // vDebito
                     float credito = Float.parseFloat(datos[4]); // vCredito
-
                     // Sumar los valores
                     totalDebito += debito;
                     totalCredito += credito;
@@ -178,9 +201,24 @@ public class PanelMovimientosController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (totalDebito == totalCredito){
+        if (totalDebito == totalCredito && totalDebito>0 && totalCredito>0){
             String registro = nDocumento + ";" + fDocumento + ";" + tipoDocumento + ";" + desDocumento + ";" + HechoPor + ";" + fActualizacion + ";" + StatusActualizacion;
-            File file = new File(archivoC);
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoC, true))) {
+                writer.write(registro);
+                writer.newLine(); // Agregar un salto de línea al final
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Info");
+                alert.setHeaderText("Guardado correctamente");
+                alert.setContentText("Datos de cuenta guardado correctamente");
+                alert.showAndWait();
+
+            } catch (IOException e) {
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Error");
+                alert1.setHeaderText("Error al guardar los datos");
+                alert1.setContentText("No se pudo guardar los datos de la cuenta");
+                alert1.showAndWait();
+            }
 
         }
         else {
@@ -206,27 +244,24 @@ public class PanelMovimientosController implements Initializable {
         btn_save.setDisable(true);
         btn_add.setDisable(true);
 
-        BooleanBinding areAllFilled = Bindings.createBooleanBinding(() ->
-                        !txtf_nDocumento.getText().trim().isEmpty() &&
-                                !txtf_tipoDocumento.getText().trim().isEmpty() &&
-                                !txtf_desDocumento.getText().trim().isEmpty()
-                ,txtf_nDocumento.textProperty()
-                ,txtf_tipoDocumento.textProperty()
-                ,txtf_desDocumento.textProperty()
-        );
-        btn_save.disableProperty().bind(areAllFilled.not());
 
         BooleanBinding areAllFilled1 = Bindings.createBooleanBinding(() ->
                         !txtf_Secuencia.getText().trim().isEmpty() &&
-                                !txtf_Cuenta.getText().trim().isEmpty() ||
+                                !txtf_nDocumento.getText().trim().isEmpty() &&
+                                !txtf_Cuenta.getText().trim().isEmpty() &&
+                                !txtf_tipoDocumento.getText().trim().isEmpty() &&
+                                !txtf_desDocumento.getText().trim().isEmpty() &&
                                 !txtf_Debito.getText().trim().isEmpty() ||
                                 !txtf_Credito.getText().trim().isEmpty()
                 ,txtf_Secuencia.textProperty()
                 ,txtf_Cuenta.textProperty()
                 ,txtf_Debito.textProperty()
                 ,txtf_Credito.textProperty()
+                ,txtf_nDocumento.textProperty()
+                ,txtf_tipoDocumento.textProperty()
+                ,txtf_desDocumento.textProperty()
         );
-        btn_add.disableProperty().bind(areAllFilled.not());
+        btn_add.disableProperty().bind(areAllFilled1.not());
 
         // Actualizar fecha y hora al iniciar
         controladorFechaHora.updateDateTime(lbl_date, lbl_hour);
@@ -236,12 +271,14 @@ public class PanelMovimientosController implements Initializable {
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
 
+
         col_NumeroCuenta.setCellValueFactory(cellData ->cellData.getValue().getnDocumentoProperty());
         col_SecuenciaDocumento.setCellValueFactory(cellData ->cellData.getValue().getSecDocumentoProperty());
         col_CuentaContable.setCellValueFactory(cellData ->cellData.getValue().getCuentaContableProperty());
         col_Debito.setCellValueFactory(cellData ->cellData.getValue().getVDebitoProperty());
         col_Credito.setCellValueFactory(cellData ->cellData.getValue().getVCreditoProperty());
         col_Comentario.setCellValueFactory(cellData ->cellData.getValue().getComentarioProperty());
+
 
         //Listener del textfield Debito, para que si esta lleno el de credito no se pueda llenar
         txtf_Debito.textProperty().addListener(((observable, oldValue, newValue) ->{
@@ -296,13 +333,6 @@ public class PanelMovimientosController implements Initializable {
                 }
             }
         });
-        try{
-            listaDetalle = FXCollections.observableArrayList();
-            loadFile(archivoD);
-            tview_detalle.setItems(listaDetalle);
-        }catch (Exception ex){
-            System.out.println(ex);
-        }
     }
 
     public void reload(){
@@ -328,10 +358,9 @@ public class PanelMovimientosController implements Initializable {
                 while ((linea = reader.readLine()) != null) {
                     String[] datos = linea.split(";");
                     try {
-                        if (txtf_nDocumento.getText().trim().equals(datos[0])) {
+                        if (txtf_nDocumento.getText().equals(datos[0])) {
                             Detalle detalle = new Detalle(datos[0],datos[1],datos[2], datos[3], datos[4], datos[5]);
                             listaDetalle.add(detalle);
-                            System.out.println("Datos procesados: " + datos);
                         }
                     } catch (Exception ex) {
                         ex.printStackTrace();
