@@ -61,7 +61,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         desCuenta = txtf_desCuenta.getText();
         tipoCuenta = cbox_tipoCuenta.getValue() =="General" ? true : false;
         nivelCuenta = Integer.parseInt(cbox_nivelCuenta.getValue());
-        CuentaPadre = txtf_CuentaPadre.getText().isEmpty() ? 0 : Integer.parseInt(txtf_nCuenta.getText());
+        CuentaPadre = txtf_CuentaPadre.getText().isEmpty() ? 0 : Integer.parseInt(txtf_CuentaPadre.getText());
         grupoCuenta = String.valueOf(cbox_grupoCuenta.getValue());
         fCreacion = lbl_date.getText();
         hCreacion = lbl_hour.getText();
@@ -82,16 +82,20 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         }
         boolean cuentaExiste = false;
         boolean cuentapadreExiste = false;
+        boolean noPadre= false;
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String linea;
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(";");
-                int numeroCuentaArchivo = Integer.parseInt(datos[0]); // Convertir a entero para comparar
-                if (numeroCuentaArchivo == nCuenta) {
+                String numeroCuentaArchivo = datos[0]; // Convertir a entero para comparar
+                if (numeroCuentaArchivo.equals(String.valueOf(nCuenta))) {
                     cuentaExiste = true; // La cuenta ya existe
                 }
-                if (numeroCuentaArchivo == CuentaPadre && !(nivelCuenta ==0)) {
+                if (numeroCuentaArchivo.equals(String.valueOf(CuentaPadre)) && nivelCuenta >0) {
                     cuentapadreExiste = true; // La cuenta padre existe
+                }
+                if (datos[0].equals(String.valueOf(CuentaPadre)) && datos[2].equals("false")){
+                    noPadre=true;
                 }
             }
         } catch (IOException e) {
@@ -104,11 +108,18 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
             alert.setContentText("El numero de cuenta ingresado ya está registrado.");
             alert.showAndWait();
             return; // Detener el proceso
-        } else if (!cuentapadreExiste && !(nivelCuenta==0)) {
+        } else if (!cuentapadreExiste && nivelCuenta!=0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Cuenta padre no existe");
             alert.setContentText("El numero de cuenta padre ingresado no existe.");
+            alert.showAndWait();
+            return;
+        } else if (noPadre) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error en la cuenta padre");
+            alert.setContentText("Una cuenta tipo detalle no puede ser padre");
             alert.showAndWait();
             return;
         }
@@ -242,6 +253,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         float DebitoAc=0, CreditoAc=0, BalanceCta=0;
         String desCuenta="", grupoCuenta="", fCreacion="", hCreacion="";
         boolean tipoCuenta= false;
+        boolean noEdit = false;
         nCuenta = Integer.parseInt(txtf_nCuenta.getText());
         File file = new File(archivo);
         if (!file.exists()) {
@@ -274,6 +286,9 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
                     if (numeroCuentaArchivo == nCuenta) {
                         esCuentaPadre = true; // La cuenta ya existe
                     }
+                    if(BalanceCta >0){
+                        noEdit = true;
+                    }
                     break;
                 }
             }
@@ -283,7 +298,14 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
         // Si el usuario existe, mostrar un mensaje y salir
-        if (cuentaExiste) {
+        if (noEdit){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error al editar la cuenta");
+            alert.setContentText("Una cuenta con balance no puede ser modificada");
+            alert.showAndWait();
+        }
+        else if (cuentaExiste) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Mantenimientos/Man_CatalogoCuentaEdit.fxml"));
                 Parent root = loader.load();
@@ -353,46 +375,13 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         }catch (Exception ex){
             ex.printStackTrace();
         }
-
+        boolean isCuentaPadreDisabled = txtf_CuentaPadre.isDisabled();
+        setupBindings(isCuentaPadreDisabled);
         txtf_CuentaPadre.disableProperty().addListener(((observable, oldValue, newValue) ->
         {
-            if (newValue) {
-                BooleanBinding areAllFilled = Bindings.createBooleanBinding(()->
-                                !txtf_nCuenta.getText().trim().isEmpty() &&
-                                        !txtf_desCuenta.getText().trim().isEmpty() &&
-                                        cbox_tipoCuenta.getValue() != null &&
-                                        cbox_nivelCuenta.getValue() != null &&
-                                        cbox_grupoCuenta.getValue() != null
-                        ,txtf_nCuenta.textProperty()
-                        ,txtf_desCuenta.textProperty()
-                        ,cbox_tipoCuenta.valueProperty()
-                        ,cbox_nivelCuenta.valueProperty()
-                        ,cbox_grupoCuenta.valueProperty()
-                );
-                btn_save.disableProperty().bind(areAllFilled.not());
-            }
-            else {
-                BooleanBinding areAllFilled = Bindings.createBooleanBinding(()->
-                                !txtf_nCuenta.getText().trim().isEmpty() &&
-                                        !txtf_desCuenta.getText().trim().isEmpty() &&
-                                        !txtf_CuentaPadre.getText().trim().isEmpty() &&
-                                        cbox_tipoCuenta.getValue() != null &&
-                                        cbox_nivelCuenta.getValue() != null &&
-                                        cbox_grupoCuenta.getValue() != null
-                        ,txtf_nCuenta.textProperty()
-                        ,txtf_desCuenta.textProperty()
-                        ,txtf_CuentaPadre.textProperty()
-                        ,cbox_tipoCuenta.valueProperty()
-                        ,cbox_nivelCuenta.valueProperty()
-                        ,cbox_grupoCuenta.valueProperty()
-
-                );
-                btn_save.disableProperty().bind(areAllFilled.not());
-            }
-        }
-                ));
-
-
+           setupBindings(newValue);
+        }));
+        // Crear una Binding para validar si todos los campos requeridos están llenos
 
         BooleanBinding areAllFilled1 = Bindings.createBooleanBinding(()->
                 !txtf_nCuenta.getText().trim().isEmpty()
@@ -449,6 +438,47 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         });
 
 
+    }
+    private void setupBindings(boolean isCuentaPadreDisabled) {
+        // Romper cualquier binding previo en btn_save
+        btn_save.disableProperty().unbind();
+
+        // Crear un BooleanBinding basado en el estado de txtf_CuentaPadre
+        BooleanBinding areAllFilled;
+        if (isCuentaPadreDisabled) {
+            // Si txtf_CuentaPadre está desactivado, no validar su contenido
+            areAllFilled = Bindings.createBooleanBinding(() ->
+                            !txtf_nCuenta.getText().trim().isEmpty() &&
+                                    !txtf_desCuenta.getText().trim().isEmpty() &&
+                                    cbox_tipoCuenta.getValue() != null &&
+                                    cbox_nivelCuenta.getValue() != null &&
+                                    cbox_grupoCuenta.getValue() != null,
+                    txtf_nCuenta.textProperty(),
+                    txtf_desCuenta.textProperty(),
+                    cbox_tipoCuenta.valueProperty(),
+                    cbox_nivelCuenta.valueProperty(),
+                    cbox_grupoCuenta.valueProperty()
+            );
+        } else {
+            // Si txtf_CuentaPadre está activado, validar su contenido también
+            areAllFilled = Bindings.createBooleanBinding(() ->
+                            !txtf_nCuenta.getText().trim().isEmpty() &&
+                                    !txtf_desCuenta.getText().trim().isEmpty() &&
+                                    !txtf_CuentaPadre.getText().trim().isEmpty() &&
+                                    cbox_tipoCuenta.getValue() != null &&
+                                    cbox_nivelCuenta.getValue() != null &&
+                                    cbox_grupoCuenta.getValue() != null,
+                    txtf_nCuenta.textProperty(),
+                    txtf_desCuenta.textProperty(),
+                    txtf_CuentaPadre.textProperty(),
+                    cbox_tipoCuenta.valueProperty(),
+                    cbox_nivelCuenta.valueProperty(),
+                    cbox_grupoCuenta.valueProperty()
+            );
+        }
+
+        // Vincular la propiedad disable del botón al resultado del binding
+        btn_save.disableProperty().bind(areAllFilled.not());
     }
 
     public void returnMenu() throws IOException {
