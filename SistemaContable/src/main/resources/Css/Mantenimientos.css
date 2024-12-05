@@ -8,11 +8,19 @@
     -fx-background-color: #c70000;
 }
 .btn_search{
-    -fx-background-color: #c7a100;
+    -fx-background-color: #02c4c3;
 }
 .btn_shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 8, 0.5, 3, 3);
 }
 #btn_return{
     -fx-background-color: transparent;
+}
+#text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+#text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
 }

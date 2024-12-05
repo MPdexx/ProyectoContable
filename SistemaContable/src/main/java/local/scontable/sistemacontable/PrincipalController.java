@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import local.scontable.sistemacontable.Clases.CambioPanel;
 import local.scontable.sistemacontable.ControlMantenimientos.MantenimientoUsuariosController;
+import local.scontable.sistemacontable.ControlMovimientos.PanelMovimientosController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +33,8 @@ public class PrincipalController implements Initializable, CambioPanel {
     Label lbl_usuario;
     private String acceso;
     private MantenimientoUsuariosController access = new MantenimientoUsuariosController();
+    private PanelMovimientosController user =  new PanelMovimientosController();
+    private String Username;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -55,12 +58,23 @@ public class PrincipalController implements Initializable, CambioPanel {
         }
     }
 
+    public void changePanel_movimientos(){
+        try {
+            cMantenimientos("/Movimientos/PanelMovimientos.fxml");
+            user.setUsername(Username);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
     public void cMantenimientos(String fxml) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
             Pane rgpn = fxmlLoader.load();
             if (fxml.equals("/Mantenimientos/MantenimientoUsuarios.fxml")){
                 access = fxmlLoader.getController();
+            } else if (fxml.equals("/Movimientos/PanelMovimientos.fxml")) {
+                user = fxmlLoader.getController();
             }
             Object controller = fxmlLoader.getController();
             if (controller instanceof CambioPanel) {
@@ -96,6 +110,7 @@ public class PrincipalController implements Initializable, CambioPanel {
 
     public void displayUserName(String user){
         lbl_usuario.setText(user);
+        Username = user;
     }
 
     public void gotoMenu(){

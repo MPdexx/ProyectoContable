@@ -61,7 +61,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         desCuenta = txtf_desCuenta.getText();
         tipoCuenta = cbox_tipoCuenta.getValue() =="General" ? true : false;
         nivelCuenta = Integer.parseInt(cbox_nivelCuenta.getValue());
-        CuentaPadre = txtf_CuentaPadre.getText() ==null ? 0 : Integer.parseInt(txtf_nCuenta.getText());
+        CuentaPadre = txtf_CuentaPadre.getText().isEmpty() ? 0 : Integer.parseInt(txtf_nCuenta.getText());
         grupoCuenta = String.valueOf(cbox_grupoCuenta.getValue());
         fCreacion = lbl_date.getText();
         hCreacion = lbl_hour.getText();
@@ -258,7 +258,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
 
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(";");
-                if (datos.length == 6 && datos[0].equals(String.valueOf(nCuenta))) { // Validar por nombre de usuario
+                if (datos.length == 11 && datos[0].equals(String.valueOf(nCuenta))) { // Validar por nombre de usuario
                     desCuenta = datos[1];
                     tipoCuenta = Boolean.parseBoolean(datos[2]);
                     nivelCuenta = Integer.parseInt(datos[3]);
@@ -354,40 +354,45 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
             ex.printStackTrace();
         }
 
-        if (txtf_CuentaPadre.disableProperty().equals(true)){
-            BooleanBinding areAllFilled = Bindings.createBooleanBinding(()->
-                     !txtf_nCuenta.getText().trim().isEmpty() &&
-                     !txtf_desCuenta.getText().trim().isEmpty() &&
-                     cbox_tipoCuenta.getValue() != null &&
-                     cbox_nivelCuenta.getValue() != null &&
-                     cbox_grupoCuenta.getValue() != null
-                    ,txtf_nCuenta.textProperty()
-                    ,txtf_desCuenta.textProperty()
-                    ,txtf_CuentaPadre.textProperty()
-                    ,cbox_tipoCuenta.valueProperty()
-                    ,cbox_nivelCuenta.valueProperty()
-                    ,cbox_grupoCuenta.valueProperty()
-            );
-            btn_save.disableProperty().bind(areAllFilled.not());
-        }
-        else {
-            BooleanBinding areAllFilled = Bindings.createBooleanBinding(()->
-                     !txtf_nCuenta.getText().trim().isEmpty() &&
-                     !txtf_desCuenta.getText().trim().isEmpty() &&
-                     !txtf_CuentaPadre.getText().trim().isEmpty() &&
-                     cbox_tipoCuenta.getValue() != null &&
-                     cbox_nivelCuenta.getValue() != null &&
-                     cbox_grupoCuenta.getValue() != null
-                    ,txtf_nCuenta.textProperty()
-                    ,txtf_desCuenta.textProperty()
-                    ,txtf_CuentaPadre.textProperty()
-                    ,cbox_tipoCuenta.valueProperty()
-                    ,cbox_nivelCuenta.valueProperty()
-                    ,cbox_grupoCuenta.valueProperty()
+        txtf_CuentaPadre.disableProperty().addListener(((observable, oldValue, newValue) ->
+        {
+            if (newValue) {
+                BooleanBinding areAllFilled = Bindings.createBooleanBinding(()->
+                                !txtf_nCuenta.getText().trim().isEmpty() &&
+                                        !txtf_desCuenta.getText().trim().isEmpty() &&
+                                        cbox_tipoCuenta.getValue() != null &&
+                                        cbox_nivelCuenta.getValue() != null &&
+                                        cbox_grupoCuenta.getValue() != null
+                        ,txtf_nCuenta.textProperty()
+                        ,txtf_desCuenta.textProperty()
+                        ,cbox_tipoCuenta.valueProperty()
+                        ,cbox_nivelCuenta.valueProperty()
+                        ,cbox_grupoCuenta.valueProperty()
+                );
+                btn_save.disableProperty().bind(areAllFilled.not());
+            }
+            else {
+                BooleanBinding areAllFilled = Bindings.createBooleanBinding(()->
+                                !txtf_nCuenta.getText().trim().isEmpty() &&
+                                        !txtf_desCuenta.getText().trim().isEmpty() &&
+                                        !txtf_CuentaPadre.getText().trim().isEmpty() &&
+                                        cbox_tipoCuenta.getValue() != null &&
+                                        cbox_nivelCuenta.getValue() != null &&
+                                        cbox_grupoCuenta.getValue() != null
+                        ,txtf_nCuenta.textProperty()
+                        ,txtf_desCuenta.textProperty()
+                        ,txtf_CuentaPadre.textProperty()
+                        ,cbox_tipoCuenta.valueProperty()
+                        ,cbox_nivelCuenta.valueProperty()
+                        ,cbox_grupoCuenta.valueProperty()
 
-            );
-            btn_save.disableProperty().bind(areAllFilled.not());
+                );
+                btn_save.disableProperty().bind(areAllFilled.not());
+            }
         }
+                ));
+
+
 
         BooleanBinding areAllFilled1 = Bindings.createBooleanBinding(()->
                 !txtf_nCuenta.getText().trim().isEmpty()
