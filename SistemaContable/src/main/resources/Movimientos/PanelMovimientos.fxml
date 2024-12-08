@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -31,13 +32,12 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtf_nDocumento" layoutX="232.0" layoutY="45.0" prefHeight="32.0" prefWidth="150.0" stylesheets="@../Css/Mantenimientos.css" />
+      <TextField fx:id="txtf_nDocumento" layoutX="232.0" layoutY="45.0" prefHeight="32.0" prefWidth="167.0" stylesheets="@../Css/Mantenimientos.css" />
       <Label layoutX="82.0" layoutY="113.0" text="Tipo de Documento">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtf_tipoDocumento" layoutX="232.0" layoutY="107.0" prefHeight="32.0" prefWidth="150.0" stylesheets="@../Css/Mantenimientos.css" />
       <Label layoutX="82.0" layoutY="170.0" text="Descripción">
          <font>
             <Font size="16.0" />
@@ -116,7 +116,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_cancel" layoutX="522.0" layoutY="604.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Cancelar" textFill="WHITE">
+      <Button fx:id="btn_cancel" layoutX="522.0" layoutY="604.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -128,6 +128,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ChoiceBox fx:id="cbox_tipoDocumento" layoutX="232.0" layoutY="110.0" prefHeight="32.0" prefWidth="167.0" />
    </children>
    <styleClass>
       <String fx:value="pane_border" />

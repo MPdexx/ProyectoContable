@@ -34,7 +34,9 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
     @FXML
     TableView<Cuenta> tview_cuenta;
     @FXML
-    TableColumn<Cuenta, String> col_nCuenta, col_desCuenta, col_tipo, col_lvl, col_cuentaPadre, col_grupo, col_fCreacion, col_hCreacion, col_DebitoAc, col_CreditoAc, col_Balance;
+    TableColumn<Cuenta, String> col_nCuenta, col_desCuenta, col_tipo, col_lvl, col_cuentaPadre, col_grupo, col_fCreacion, col_hCreacion, col_DebitoAc, col_CreditoAc;
+    @FXML
+    TableColumn<Cuenta, Float> col_Balance;
     @FXML
     Label lbl_date, lbl_hour;
     @FXML
@@ -366,7 +368,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         col_hCreacion.setCellValueFactory(cellData -> cellData.getValue().hCreacionProperty());
         col_DebitoAc.setCellValueFactory(cellData -> cellData.getValue().DebitoAcProperty());
         col_CreditoAc.setCellValueFactory(cellData -> cellData.getValue().CreditoAcProperty());
-        col_Balance.setCellValueFactory(cellData -> cellData.getValue().BalanceCtaProperty());
+        col_Balance.setCellValueFactory(cellData -> cellData.getValue().BalanceCtaProperty().asObject());
         try{
             userList = FXCollections.observableArrayList();
             filteredData = new FilteredList<>(userList,p-> true);
@@ -525,7 +527,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
                             if (!datos[4].equals("0")){
                                 cPadre = datos[4];
                             }
-                            Cuenta cuenta = new Cuenta(datos[0],datos[1],tCuenta, datos[3], cPadre, datos[5], datos[6], datos[7], datos[8], datos[9], datos[10]);
+                            Cuenta cuenta = new Cuenta(datos[0],datos[1],tCuenta, datos[3], cPadre, datos[5], datos[6], datos[7], datos[8], datos[9],Float.parseFloat(datos[10]));
                             userList.add(cuenta);
 
                         }

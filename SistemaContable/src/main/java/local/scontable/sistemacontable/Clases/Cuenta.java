@@ -1,5 +1,7 @@
 package local.scontable.sistemacontable.Clases;
 
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -14,9 +16,9 @@ public class Cuenta {
     private final StringProperty hCreacion;
     private final StringProperty DebitoAc;
     private final StringProperty CreditoAc;
-    private final StringProperty BalanceCta;
+    private final FloatProperty BalanceCta;
 
-    public Cuenta(String nroCuenta1, String desCuenta1, String tipoCuenta1, String lvlCuenta1, String ctaPadre1, String grpCuenta1, String fCreacion1, String hCreacion1, String DebitoAc1, String CreditoAc1, String BalanceCta1){
+    public Cuenta(String nroCuenta1, String desCuenta1, String tipoCuenta1, String lvlCuenta1, String ctaPadre1, String grpCuenta1, String fCreacion1, String hCreacion1, String DebitoAc1, String CreditoAc1, float BalanceCta1){
         this.nroCuenta = new SimpleStringProperty(nroCuenta1);
         this.desCuenta = new SimpleStringProperty(desCuenta1);
         this.tipoCuenta = new SimpleStringProperty(tipoCuenta1);
@@ -27,7 +29,7 @@ public class Cuenta {
         this.hCreacion = new SimpleStringProperty(hCreacion1);
         this.DebitoAc = new SimpleStringProperty(DebitoAc1);
         this.CreditoAc = new SimpleStringProperty(CreditoAc1);
-        this.BalanceCta = new SimpleStringProperty(BalanceCta1);
+        this.BalanceCta = new SimpleFloatProperty(BalanceCta1);
     }
 
     public String getNroCuenta(){
@@ -130,13 +132,13 @@ public class Cuenta {
         return CreditoAc;
     }
 
-    public String getBalanceCta(){
+    public float getBalanceCta(){
         return BalanceCta.get();
     }
-    public void setBalanceCta(String BalanceCta1){
+    public void setBalanceCta(float BalanceCta1){
         this.BalanceCta.set(BalanceCta1);
     }
-    public StringProperty BalanceCtaProperty(){
+    public FloatProperty BalanceCtaProperty(){
         return BalanceCta;
     }
 
