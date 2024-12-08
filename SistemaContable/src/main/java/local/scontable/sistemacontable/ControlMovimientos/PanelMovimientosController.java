@@ -41,12 +41,15 @@ public class PanelMovimientosController implements Initializable {
     private static String archivo = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cuentas.txt";
     private static String archivoC = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cabecera.txt";
     private static String archivoD = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\detalle.txt";
+    private static String archivoD1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\detalle1.txt";
     private static String archivo1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cuentas1.txt";
     private String usuario;
     private int cont=0;
     private ControladorFechaHora controladorFechaHora = new ControladorFechaHora();
     ObservableList<Detalle> listaDetalle = FXCollections.observableArrayList();
     private Map<String, Cuenta> cuentas = new HashMap<>();
+    private boolean isSaving = false; // Bandera para evitar múltiples guardados
+    private boolean isEditing = false;
 
     public void addData(){
         String nDocumento, secDocumento, cuentaContable, comentario = "";
@@ -57,9 +60,9 @@ public class PanelMovimientosController implements Initializable {
         vDebito = txtf_Debito.getText().isEmpty() ? 0 : Float.parseFloat(txtf_Debito.getText());
         vCredito = txtf_Credito.getText().isEmpty() ? 0 : Float.parseFloat(txtf_Credito.getText());
         comentario = txtf_Comentario.getText().isEmpty() ? "Sin comentarios" : txtf_Comentario.getText();
-
         File file = new File(archivo);
         File file1 = new File(archivoD);
+        File file2 = new File(archivoC);
         if (!file.exists()) {
             try {
                 file.createNewFile();
@@ -94,6 +97,7 @@ public class PanelMovimientosController implements Initializable {
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
+
         try (BufferedReader reader = new BufferedReader(new FileReader(file1))) {
             String linea;
             while ((linea = reader.readLine()) != null) {
@@ -113,8 +117,55 @@ public class PanelMovimientosController implements Initializable {
             alert.setContentText("El numero de cuenta ingresado no existe");
             alert.showAndWait();
             return; // Detener el proceso
-        } else if (docExiste) {
 
+        } else if (docExiste) {
+            Alert del = new Alert(Alert.AlertType.CONFIRMATION);
+            del.setTitle("Confirmar");
+            del.setContentText("Este documento existe, ¿desea traerlo?");
+            del.showAndWait().ifPresent(response ->{
+                if (response == ButtonType.OK){
+                    try (BufferedReader reader = new BufferedReader(new FileReader(file2))) {
+                        String linea;
+                        while ((linea = reader.readLine()) != null) {
+
+                            String[] datos = linea.split(";");
+                            String nroDocument = datos[0];
+                            if (nDocumento.equalsIgnoreCase(nroDocument)){
+                            String docType = datos[2];
+                            String desDoc = datos[3];
+                            String mont = datos[5];
+                            cbox_tipoDocumento.setValue(docType);
+                            txtf_desDocumento.setText(desDoc);
+                            txtf_Monto.setText(mont);
+                            }
+
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Error al leer el archivo: " + e.getMessage());
+                    }
+                    try (BufferedReader reader = new BufferedReader(new FileReader(file1))) {
+                        String linea;
+                        while ((linea = reader.readLine()) != null) {
+
+                            String[] datos = linea.split(";");
+                            String nroDocument = datos[0];
+                            if (nDocumento.equalsIgnoreCase(nroDocument)){
+                                String Account = datos[2];
+                                txtf_Cuenta.setText(Account);
+                            }
+
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Error al leer el archivo: " + e.getMessage());
+                    }
+                    txtf_nDocumento.setDisable(true);
+                    txtf_Cuenta.setDisable(true);
+                    cont++;
+                    reload();
+                    isEditing = true;
+                    return;
+                }
+            });
 
         } else {
             String registro= nDocumento+ ";" + secDocumento + ";" + cuentaContable +";" + vDebito + ";" + vCredito +";" + comentario;
@@ -219,58 +270,21 @@ public class PanelMovimientosController implements Initializable {
                 alert1.showAndWait();
             }
             String nCuenta = "";
-            String desCuenta= "";
-            String tipoCuenta="";
-            String nivelCuenta="";
-            String CuentaPadre="";
-            String grupoCuenta="";
-            String fCreacion="";
-            String hCreacion="";
-            String vDebito="";
-            String vCreditos="";
-            String Balance="";
 
             File original = new File(archivo);
-            File temporal = new File(archivo1);
-            try (BufferedReader reader = new BufferedReader(new FileReader(original));
-                BufferedWriter writer = new BufferedWriter(new FileWriter(temporal))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(original))) {
                 String linea;
 
                 while ((linea = reader.readLine()) != null) {
                     String[] datos = linea.split(";"); // Asume que los datos están separados por comas
                     if (datos[0].equals(cuentaContable)){
                         nCuenta =  datos[0];
-                        desCuenta = datos[1];
-                        tipoCuenta = datos[2];
-                        nivelCuenta = datos[3];
-                        CuentaPadre = datos[4];
-                        grupoCuenta = datos[5];
-                        fCreacion = datos[6];
-                        hCreacion = datos[7];
-                        vDebito = datos[8];
-                        vCreditos = datos[9];
-                        String bal = Balance(datos[10],datos[2], tipoDocumento);
-                        Balance = bal;
-                        String registroC = nCuenta + ";" + desCuenta + ";" + tipoCuenta + ";" + nivelCuenta + ";" +
-                                cuentaContable + ";" + grupoCuenta + ";" + fCreacion + ";" + hCreacion + ";" + vDebito
-                                + ";" + vCreditos + ";" + Balance;
-                        writer.write(registroC);
-
                     }
-                    else {
-                        writer.newLine();
-                    }
-                    writer.newLine();
                 }
-               writer.close();
                 reader.close();
                 FileInputStream fis = new FileInputStream(original);
                 fis.close();
-                if (original.delete()) {
-                    temporal.renameTo(original);
-                } else {
-                    System.out.println("Error al eliminar el archivo original.");
-                }
+
 
             } catch (IOException e) {
                e.printStackTrace();
@@ -284,7 +298,7 @@ public class PanelMovimientosController implements Initializable {
                     cuenta = cuentas.get(cuenta.getCtaPadre());
                 }
                 guardarCuentas(archivo,archivo1);
-
+                isSaving = false;
 
         }
         else {
@@ -299,41 +313,13 @@ public class PanelMovimientosController implements Initializable {
         txtf_Debito.setText("");
         txtf_Credito.setText("");
         txtf_Comentario.setText("");
+        txtf_Monto.setText("");
+        txtf_desDocumento.setText("");
+        cbox_tipoDocumento.setValue("");
+        reload();
     }
     public void setUsername(String username){
         this.txtf_Usuario.setText(username);
-    }
-
-    public boolean DocType(String value){
-        if (value.equals("Ventas")){
-            return true;
-        }
-        else if(value.equals("Compras")){
-            return false;
-        } else if (value.equals("Notas de débito")) {
-            return true;
-        } else if (value.equals("Notas de crédito")) {
-            return false;
-        }
-        return false;
-    }
-    public String Balance(String mont, String org, String tipoDocumento){
-        String bal = "";
-        float balance = Float.parseFloat(mont);
-        if (org.equals("true") && DocType(tipoDocumento)){
-            balance += Float.parseFloat(txtf_Monto.getText());
-
-        } else if (org.equals("true") && !DocType(tipoDocumento)) {
-            balance -= Float.parseFloat(txtf_Monto.getText());
-        } else if (org.equals("false") && DocType(tipoDocumento)) {
-            balance -= Float.parseFloat(txtf_Monto.getText());
-        }
-        else if(org.equals("false") && !DocType(tipoDocumento)){
-            balance += Float.parseFloat(txtf_Monto.getText());
-        }
-        bal = String.valueOf(balance);
-
-        return bal;
     }
 
     public void returnMenu(){
@@ -458,6 +444,12 @@ public class PanelMovimientosController implements Initializable {
     private void guardarCuentas(String archivo, String archivo1) throws IOException {
         File original = new File(archivo);
         File temporal = new File(archivo1);
+        if (isSaving) {
+            System.out.println("Guardar cuentas ya está en proceso. Ignorando esta ejecución.");
+            return; // Salir si ya se está ejecutando
+        }
+
+        isSaving = true;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(temporal))) {
             for (Cuenta cuenta : cuentas.values()) {
@@ -534,6 +526,40 @@ public class PanelMovimientosController implements Initializable {
         del.setContentText("¿Está seguro que quieres cancelar?");
         del.showAndWait().ifPresent(response ->{
             if (response == ButtonType.OK){
+                File original = new File(archivoD);
+                File temporal = new File(archivoD1);
+                if (!isEditing && original.exists()){
+                    try(BufferedReader reader = new BufferedReader(new FileReader(original));
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(temporal)))
+                    {
+                        String linea;
+
+                        while ((linea = reader.readLine()) != null) {
+                            // Separar los campos para verificar la condición
+                            String[] datos = linea.split(";");
+                            if (datos.length >=1){
+                                String nDoc = datos[0];
+                                // Escribir solo las líneas que NO coincidan con el ID a eliminar
+                                if (!txtf_nDocumento.getText().equalsIgnoreCase(nDoc)) {
+                                    writer.write(linea);
+                                    writer.newLine();
+                                }
+                            }
+
+                        }
+                        FileInputStream fis = new FileInputStream(original);
+                        fis.close();
+                        reader.close();
+                        writer.close();
+
+                        if (original.delete()){
+                            temporal.renameTo(original);
+                        }
+
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
+                }
                 txtf_nDocumento.setDisable(false);
                 txtf_nDocumento.setText("");
                 txtf_desDocumento.setText("");
@@ -545,8 +571,6 @@ public class PanelMovimientosController implements Initializable {
                 txtf_Debito.setText("");
                 txtf_Credito.setText("");
                 txtf_Comentario.setText("");
-
-
                 reload();
             }
         });
@@ -592,17 +616,20 @@ public class PanelMovimientosController implements Initializable {
             boolean esDebito = tipoDocumento.equals("Ventas") || tipoDocumento.equals("Notas de débito");
             float balanceActual = cuenta.getBalanceCta();
 
-            if (cuenta.getTipoCuenta().equals("true")) { // Cuenta de origen débito
+            // Manejar el tipo de cuenta
+            if (cuenta.getTipoCuenta().equals("true")) {
+                // Lógica para cuentas detalle
                 if (esDebito) {
-                    balanceActual += monto;
+                    balanceActual += monto; // Suma para débito
                 } else {
-                    balanceActual -= monto;
+                    balanceActual -= monto; // Resta para crédito
                 }
-            } else { // Cuenta de origen crédito
-                if (esDebito) {
-                    balanceActual -= monto;
-                } else {
-                    balanceActual += monto;
+            } else {
+                // Lógica para cuentas generales
+                if (!esDebito) {
+                    balanceActual += monto; // resta para débito
+                } else  {
+                    balanceActual -= monto; // Suma para crédito
                 }
             }
 
