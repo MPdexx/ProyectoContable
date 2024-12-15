@@ -14,11 +14,11 @@ public class Cuenta {
     private final StringProperty grpCuenta;
     private final StringProperty fCreacion;
     private final StringProperty hCreacion;
-    private final StringProperty DebitoAc;
-    private final StringProperty CreditoAc;
+    private final FloatProperty DebitoAc;
+    private final FloatProperty CreditoAc;
     private final FloatProperty BalanceCta;
 
-    public Cuenta(String nroCuenta1, String desCuenta1, String tipoCuenta1, String lvlCuenta1, String ctaPadre1, String grpCuenta1, String fCreacion1, String hCreacion1, String DebitoAc1, String CreditoAc1, float BalanceCta1){
+    public Cuenta(String nroCuenta1, String desCuenta1, String tipoCuenta1, String lvlCuenta1, String ctaPadre1, String grpCuenta1, String fCreacion1, String hCreacion1, float DebitoAc1, float CreditoAc1, float BalanceCta1){
         this.nroCuenta = new SimpleStringProperty(nroCuenta1);
         this.desCuenta = new SimpleStringProperty(desCuenta1);
         this.tipoCuenta = new SimpleStringProperty(tipoCuenta1);
@@ -27,8 +27,8 @@ public class Cuenta {
         this.grpCuenta = new SimpleStringProperty(grpCuenta1);
         this.fCreacion = new SimpleStringProperty(fCreacion1);
         this.hCreacion = new SimpleStringProperty(hCreacion1);
-        this.DebitoAc = new SimpleStringProperty(DebitoAc1);
-        this.CreditoAc = new SimpleStringProperty(CreditoAc1);
+        this.DebitoAc = new SimpleFloatProperty(DebitoAc1);
+        this.CreditoAc = new SimpleFloatProperty(CreditoAc1);
         this.BalanceCta = new SimpleFloatProperty(BalanceCta1);
     }
 
@@ -112,23 +112,23 @@ public class Cuenta {
         return hCreacion;
     }
 
-    public String getDebitoAc(){
+    public float getDebitoAc(){
         return DebitoAc.get();
     }
-    public void setDebitoAc(String debitoAc1){
+    public void setDebitoAc(float debitoAc1){
         this.DebitoAc.set(debitoAc1);
     }
-    public StringProperty DebitoAcProperty(){
+    public FloatProperty DebitoAcProperty(){
         return DebitoAc;
     }
 
-    public String getCreditoAc(){
+    public float getCreditoAc(){
         return CreditoAc.get();
     }
-    public void setCreditoAc(String CreditoAc1){
+    public void setCreditoAc(float CreditoAc1){
         this.CreditoAc.set(CreditoAc1);
     }
-    public StringProperty CreditoAcProperty(){
+    public FloatProperty CreditoAcProperty(){
         return CreditoAc;
     }
 

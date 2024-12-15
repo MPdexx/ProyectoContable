@@ -104,7 +104,7 @@
             <TableColumn fx:id="col_Comentario" prefWidth="251.20001220703125" text="Comentario" />
         </columns>
       </TableView>
-      <Button fx:id="btn_save" layoutX="410.0" layoutY="604.0" mnemonicParsing="false" onAction="#SaveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Guardar" textFill="WHITE">
+      <Button fx:id="btn_save" layoutX="356.0" layoutY="602.0" mnemonicParsing="false" onAction="#SaveData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Guardar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -116,7 +116,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_cancel" layoutX="522.0" layoutY="604.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Cancelar" textFill="WHITE">
+      <Button fx:id="btn_cancel" layoutX="468.0" layoutY="602.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -129,6 +129,26 @@
          </cursor>
       </Button>
       <ChoiceBox fx:id="cbox_tipoDocumento" layoutX="232.0" layoutY="110.0" prefHeight="32.0" prefWidth="167.0" />
+      <Button fx:id="btn_delete" layoutX="577.0" layoutY="602.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="49.0" prefWidth="80.0" stylesheets="/Css/Mantenimientos.css" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn_delete" />
+            <String fx:value="btn_shadow" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_deleteRow" layoutX="249.0" layoutY="355.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="32.0" prefWidth="83.0" styleClass="btn_bRow" stylesheets="@../Css/Mantenimientos.css" text="Borrar" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
    <styleClass>
       <String fx:value="pane_border" />

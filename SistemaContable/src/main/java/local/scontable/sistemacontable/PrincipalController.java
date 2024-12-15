@@ -67,6 +67,14 @@ public class PrincipalController implements Initializable, CambioPanel {
         }
     }
 
+    public void changePanel_procesos(){
+        try {
+            cMantenimientos("/Procesos/CierreDiario.fxml");
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
     public void cMantenimientos(String fxml) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));

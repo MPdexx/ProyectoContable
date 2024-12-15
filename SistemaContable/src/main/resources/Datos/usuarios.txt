@@ -1,5 +1,3 @@
 admin;Moises;Perez;1234;1;mperez
 Dex;tony;gambino;admin;1;ejemplo
 hola;Sanky;Panky;puedeser;0;Sin correo
-fmj;Fausto;Martinez;123;1;Sin correo
-fmjkl;Raul;Perez;12;0;rp@gmail.com

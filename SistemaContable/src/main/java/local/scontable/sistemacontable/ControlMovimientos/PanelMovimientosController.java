@@ -35,11 +35,12 @@ public class PanelMovimientosController implements Initializable {
     @FXML
     ChoiceBox<String> cbox_tipoDocumento;
     @FXML
-    Button btn_save, btn_cancel, btn_add;
+    Button btn_save, btn_cancel, btn_add, btn_delete, btn_deleteRow;
     @FXML
     Label lbl_date, lbl_hour;
     private static String archivo = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cuentas.txt";
     private static String archivoC = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cabecera.txt";
+    private static String archivoC1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cabecera1.txt";
     private static String archivoD = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\detalle.txt";
     private static String archivoD1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\detalle1.txt";
     private static String archivo1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cuentas1.txt";
@@ -110,15 +111,7 @@ public class PanelMovimientosController implements Initializable {
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
-        if (!cuentaExiste) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Cuenta inexistente");
-            alert.setContentText("El numero de cuenta ingresado no existe");
-            alert.showAndWait();
-            return; // Detener el proceso
-
-        } else if (docExiste) {
+        if (docExiste) {
             Alert del = new Alert(Alert.AlertType.CONFIRMATION);
             del.setTitle("Confirmar");
             del.setContentText("Este documento existe, ¿desea traerlo?");
@@ -159,7 +152,7 @@ public class PanelMovimientosController implements Initializable {
                         System.out.println("Error al leer el archivo: " + e.getMessage());
                     }
                     txtf_nDocumento.setDisable(true);
-                    txtf_Cuenta.setDisable(true);
+                    //txtf_Cuenta.setDisable(true);
                     cont++;
                     reload();
                     isEditing = true;
@@ -167,7 +160,16 @@ public class PanelMovimientosController implements Initializable {
                 }
             });
 
-        } else {
+        } else if (!cuentaExiste) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Cuenta inexistente");
+            alert.setContentText("El numero de cuenta ingresado no existe");
+            alert.showAndWait();
+            return; // Detener el proceso
+
+        }
+        else {
             String registro= nDocumento+ ";" + secDocumento + ";" + cuentaContable +";" + vDebito + ";" + vCredito +";" + comentario;
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoD, true))) {
 
@@ -175,7 +177,8 @@ public class PanelMovimientosController implements Initializable {
                 writer.newLine(); // Agregar un salto de línea al final
                 txtf_nDocumento.setDisable(true);
                 txtf_Secuencia.setText("");
-                txtf_Cuenta.setDisable(true);
+                //txtf_Cuenta.setDisable(true);
+                txtf_Cuenta.setText("");
                 txtf_Debito.setText("");
                 txtf_Credito.setText("");
                 txtf_Comentario.setText("");
@@ -270,15 +273,17 @@ public class PanelMovimientosController implements Initializable {
                 alert1.showAndWait();
             }
             String nCuenta = "";
+            String nDoc="";
+            File original = new File(archivoD);
 
-            File original = new File(archivo);
             try (BufferedReader reader = new BufferedReader(new FileReader(original))) {
                 String linea;
 
                 while ((linea = reader.readLine()) != null) {
                     String[] datos = linea.split(";"); // Asume que los datos están separados por comas
-                    if (datos[0].equals(cuentaContable)){
-                        nCuenta =  datos[0];
+                    if (nDocumento.trim().equals(datos[0])){
+                        nDoc =  datos[0];
+                        nCuenta = datos[2];
                     }
                 }
                 reader.close();
@@ -287,17 +292,18 @@ public class PanelMovimientosController implements Initializable {
 
 
             } catch (IOException e) {
-               e.printStackTrace();
+                e.printStackTrace();
             }
+                /* procesarMovimientosDesdeArchivo(archivoD, tipoDocumento);
                 // Actualizar balances
-                actualizarBalances(cuentaContable, tipoDocumento, Monto);
+                actualizarBalances(nCuenta, tipoDocumento, Monto);
 
                 Cuenta cuenta = cuentas.get(nCuenta);
                 while (cuenta !=null){
                     cuenta.setBalanceCta(cuenta.getBalanceCta() + Monto);
                     cuenta = cuentas.get(cuenta.getCtaPadre());
                 }
-                guardarCuentas(archivo,archivo1);
+                guardarCuentas(archivo,archivo1);*/
                 isSaving = false;
 
         }
@@ -318,6 +324,200 @@ public class PanelMovimientosController implements Initializable {
         cbox_tipoDocumento.setValue("");
         reload();
     }
+
+    public void deleteData(){
+        //Añadir validacion si el documento esta actualizado o no
+        Alert del = new Alert(Alert.AlertType.CONFIRMATION);
+        del.setTitle("Confirmar");
+        del.setContentText("¿Está seguro de eliminar el movimiento?");
+        del.showAndWait().ifPresent(response -> {
+            if(response == ButtonType.OK){
+                String nDocumento = txtf_nDocumento.getText();
+                int confirm = 0;
+                File original = new File(archivoC);
+                File temporal = new File(archivoC1);
+                if (!original.exists() && !temporal.exists()) {
+                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setTitle("Error");
+                    alert1.setHeaderText("Error al eliminar el movimiento");
+                    alert1.setContentText("No hay registros guardados");
+                    alert1.showAndWait();
+                } else if (original.exists() && !temporal.exists()) {
+                    try {
+                        temporal.createNewFile();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                try (BufferedReader reader = new BufferedReader(new FileReader(original));
+                     BufferedWriter writer = new BufferedWriter(new FileWriter(temporal)))
+                {
+                    String linea;
+                    while ((linea = reader.readLine()) != null) {
+                        // Separar los campos para verificar la condición
+                        String[] datos = linea.split(";");
+                        String nomDoc = datos[0];
+
+                        // Escribir solo las líneas que NO coincidan con el ID a eliminar
+                        if (!(nomDoc.trim().equals(nDocumento.trim()))) {
+                            System.out.println("No coincide, escribiendo: " + linea);
+                            writer.write(linea);
+                            writer.newLine();
+                        }
+                        else {
+                            confirm = 1;
+                            System.out.println("Coincide, eliminando: " + linea);
+                        }
+                    }
+                    FileInputStream fis = new FileInputStream(original);
+                    fis.close();
+                    reader.close();
+                    writer.close();
+                    if (confirm == 0){
+                        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                        alert1.setTitle("Error");
+                        alert1.setHeaderText("Error al eliminar el movimiento");
+                        alert1.setContentText("No existen datos registrados");
+                        alert1.showAndWait();
+                    }
+                    else {
+                        // Reemplazar el archivo original por el temporal
+                        if (original.delete()) {
+                            temporal.renameTo(original);
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Info");
+                            alert.setHeaderText("Movimiento eliminado correctamente");
+                            alert.setContentText("Los registros se han eliminado correctamente");
+                            alert.showAndWait();
+                            reload();
+                        } else {
+                            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                            alert1.setTitle("Error");
+                            alert1.setHeaderText("Error al eliminar el movimiento");
+                            alert1.setContentText("No se pudo eliminar el registro");
+                            alert1.showAndWait();
+                        }
+                    }
+                }
+                catch (IOException ex){
+                    ex.printStackTrace();
+                }
+                original = new File(archivoD);
+                temporal = new File(archivoD1);
+                try(BufferedReader reader = new BufferedReader(new FileReader(original));
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(temporal)))
+                {
+                    String linea;
+                    while ((linea = reader.readLine()) != null) {
+                        // Separar los campos para verificar la condición
+                        String[] datos = linea.split(";");
+                        String nomDoc = datos[0];
+
+                        // Escribir solo las líneas que NO coincidan con el ID a eliminar
+                        if (!(nomDoc.trim().equals(nDocumento.trim()))) {
+                            System.out.println("No coincide, escribiendo: " + linea);
+                            writer.write(linea);
+                            writer.newLine();
+                        }
+                        else {
+                            System.out.println("Coincide, eliminando: " + linea);
+                        }
+                    }
+                    FileInputStream fis = new FileInputStream(original);
+                    fis.close();
+                    reader.close();
+                    writer.close();
+
+
+                }catch (IOException ex){
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+    }
+
+    public void deleteRow(){
+        String nDocumento = txtf_nDocumento.getText();
+        String secuencia = txtf_Secuencia.getText();
+        File original = new File(archivoD);
+        File temporal = new File(archivoD1);
+        int confirm =0;
+        try(BufferedReader reader = new BufferedReader(new FileReader(original));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(temporal)))
+        {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                // Separar los campos para verificar la condición
+                String[] datos = linea.split(";");
+                String nomDoc = datos[0];
+                String secDoc = datos[1];
+
+                // Escribir solo las líneas que NO coincidan con el ID a eliminar
+                if (!(nomDoc.trim().equals(nDocumento.trim()) && secDoc.trim().equals(secuencia.trim()))) {
+                    System.out.println("No coincide, escribiendo: " + linea);
+                    writer.write(linea);
+                    writer.newLine();
+                } else {
+                    System.out.println("Coincide, eliminando: " + linea);
+                    confirm = 1;
+                }
+            }
+            FileInputStream fis = new FileInputStream(original);
+            fis.close();
+            reader.close();
+            writer.close();
+            if (confirm == 0){
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Error");
+                alert1.setHeaderText("Error al eliminar la secuencia");
+                alert1.setContentText("No existen datos registrados");
+                alert1.showAndWait();
+            }
+            else {
+                // Reemplazar el archivo original por el temporal
+                if (original.delete()) {
+                    temporal.renameTo(original);
+                    reload();
+                } else {
+                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setTitle("Error");
+                    alert1.setHeaderText("Error al eliminar los datos");
+                    alert1.setContentText("No se pudo eliminar el registro");
+                    alert1.showAndWait();
+                }
+            }
+
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+        float totalDebito = 0;
+        float totalCredito = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivoD))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(";"); // Asume que los datos están separados por comas
+                if (datos.length >= 6 && datos[0].equals(nDocumento)) {
+                    // Parsear los campos necesarios
+                    float debito = Float.parseFloat(datos[3]); // vDebito
+                    float credito = Float.parseFloat(datos[4]); // vCredito
+                    // Sumar los valores
+                    totalDebito += debito;
+                    totalCredito += credito;
+                }
+                if (totalDebito > totalCredito){
+                    txtf_Monto.setText(String.valueOf(totalDebito));
+                }
+                else {
+                    txtf_Monto.setText(String.valueOf(totalCredito));
+                }
+
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void setUsername(String username){
         this.txtf_Usuario.setText(username);
     }
@@ -336,10 +536,18 @@ public class PanelMovimientosController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         cargarCuentas(archivo);
 
+        btn_deleteRow.setDisable(true);
         btn_save.setDisable(true);
         btn_add.setDisable(true);
+        btn_delete.setDisable(true);
         String[] docType = {"Ventas", "Compras", "Notas de débito", "Notas de crédito"};
         cbox_tipoDocumento.getItems().addAll(docType);
+
+        BooleanBinding areAllFilled = Bindings.createBooleanBinding(() ->
+                        !txtf_nDocumento.getText().trim().isEmpty()
+                ,txtf_nDocumento.textProperty()
+        );
+        btn_delete.disableProperty().bind(areAllFilled.not());
 
         BooleanBinding areAllFilled1 = Bindings.createBooleanBinding(() ->
                         !txtf_Secuencia.getText().trim().isEmpty() &&
@@ -358,6 +566,14 @@ public class PanelMovimientosController implements Initializable {
                 ,txtf_desDocumento.textProperty()
         );
         btn_add.disableProperty().bind(areAllFilled1.not());
+
+        BooleanBinding areAllFilled2 = Bindings.createBooleanBinding(() ->
+                        !txtf_nDocumento.getText().trim().isEmpty() &&
+                                !txtf_Secuencia.getText().trim().isEmpty()
+                ,txtf_nDocumento.textProperty()
+                ,txtf_Secuencia.textProperty()
+        );
+        btn_deleteRow.disableProperty().bind(areAllFilled2.not());
 
         // Actualizar fecha y hora al iniciar
         controladorFechaHora.updateDateTime(lbl_date, lbl_hour);
@@ -584,7 +800,7 @@ public class PanelMovimientosController implements Initializable {
                 String[] datos = linea.split(";");
                 if (datos.length >= 11) {
                     // Buscar cuenta padre en el mapa
-                    Cuenta cuenta = new Cuenta(datos[0],datos[1],datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], Float.parseFloat(datos[10]));
+                    Cuenta cuenta = new Cuenta(datos[0],datos[1],datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], Float.parseFloat(datos[8]), Float.parseFloat(datos[9]), Float.parseFloat(datos[10]));
                     // Añadir cuenta al mapa
                     cuentas.put(datos[0], cuenta);
                 }
@@ -592,7 +808,7 @@ public class PanelMovimientosController implements Initializable {
         } catch (IOException e) {
             System.out.println("Error al cargar las cuentas: " + e.getMessage());
         }
-        cuentas.forEach((clave, cuenta) -> {
+        /*cuentas.forEach((clave, cuenta) -> {
             System.out.println("Cuenta: " + clave);
             System.out.println("Número: " + cuenta.getNroCuenta());
             System.out.println("Descripción: " + cuenta.getDesCuenta());
@@ -600,7 +816,7 @@ public class PanelMovimientosController implements Initializable {
             System.out.println("Padre: " + cuenta.getCtaPadre());
             System.out.println("Balance: " + cuenta.getBalanceCta());
             System.out.println("--------------------------");
-        });
+        });*/
     }
 
     private void actualizarBalances(String cuentaContable, String tipoDocumento, float monto) throws IOException {
@@ -641,6 +857,63 @@ public class PanelMovimientosController implements Initializable {
             cuenta = cuentas.get(cuenta.getCtaPadre());
         }
 
+        // Guardar los cambios al archivo
+        guardarCuentas(archivo,archivo1);
+    }
+
+    private void procesarMovimientosDesdeArchivo(String archivo, String tipoMovimiento) {
+        File file = new File(archivo);
+
+        if (!file.exists()) {
+            System.out.println("El archivo no existe: " + archivo);
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+                // Dividir la línea para obtener los campos
+                String[] datos = linea.split(";");
+
+                // Extraer datos necesarios
+                String numeroCuenta = datos[2]; // Índice del número de cuenta
+                double monto = Double.parseDouble(datos[4]); // Índice del monto (débito/crédito)
+
+                // Llama a procesarMovimiento con los parámetros
+                procesarMovimiento(numeroCuenta, tipoMovimiento, monto);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+    }
+
+    private void procesarMovimiento(String numeroCuenta, String tipoMovimiento, double monto) throws IOException {
+        Cuenta cuenta = cuentas.get(numeroCuenta);
+        boolean esDebito = tipoMovimiento.equals("Ventas") || tipoMovimiento.equals("Notas de débito");
+        if (cuenta == null) {
+            System.out.println("La cuenta no existe: " + numeroCuenta);
+            return;
+        }
+
+        // Actualizar acumulado de crédito o débito
+        if (esDebito) {
+            float debitoAcumulado = cuenta.getDebitoAc();
+            cuenta.setDebitoAc((float) (debitoAcumulado + monto));
+            System.out.println("Actualizando débito acumulado: " + numeroCuenta + " -> " + (debitoAcumulado + monto));
+        } else {
+            float creditoAcumulado = cuenta.getCreditoAc();
+            cuenta.setCreditoAc((float) (creditoAcumulado + monto));
+            System.out.println("Actualizando crédito acumulado: " + numeroCuenta + " -> " + (creditoAcumulado + monto));
+        }
+        float balanceActual = cuenta.getBalanceCta();
+        if (!esDebito) {
+            balanceActual += monto;
+        } else  {
+            balanceActual -= monto;
+        }
+        cuenta.setBalanceCta(balanceActual);
         // Guardar los cambios al archivo
         guardarCuentas(archivo,archivo1);
     }

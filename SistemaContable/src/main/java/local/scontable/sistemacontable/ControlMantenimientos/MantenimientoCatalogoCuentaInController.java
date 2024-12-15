@@ -34,9 +34,9 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
     @FXML
     TableView<Cuenta> tview_cuenta;
     @FXML
-    TableColumn<Cuenta, String> col_nCuenta, col_desCuenta, col_tipo, col_lvl, col_cuentaPadre, col_grupo, col_fCreacion, col_hCreacion, col_DebitoAc, col_CreditoAc;
+    TableColumn<Cuenta, String> col_nCuenta, col_desCuenta, col_tipo, col_lvl, col_cuentaPadre, col_grupo, col_fCreacion, col_hCreacion;
     @FXML
-    TableColumn<Cuenta, Float> col_Balance;
+    TableColumn<Cuenta, Float> col_Balance, col_DebitoAc, col_CreditoAc;
     @FXML
     Label lbl_date, lbl_hour;
     @FXML
@@ -366,8 +366,8 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         col_grupo.setCellValueFactory(cellData -> cellData.getValue().GrpCuentaProperty());
         col_fCreacion.setCellValueFactory(cellData -> cellData.getValue().fCreacionProperty());
         col_hCreacion.setCellValueFactory(cellData -> cellData.getValue().hCreacionProperty());
-        col_DebitoAc.setCellValueFactory(cellData -> cellData.getValue().DebitoAcProperty());
-        col_CreditoAc.setCellValueFactory(cellData -> cellData.getValue().CreditoAcProperty());
+        col_DebitoAc.setCellValueFactory(cellData -> cellData.getValue().DebitoAcProperty().asObject());
+        col_CreditoAc.setCellValueFactory(cellData -> cellData.getValue().CreditoAcProperty().asObject());
         col_Balance.setCellValueFactory(cellData -> cellData.getValue().BalanceCtaProperty().asObject());
         try{
             userList = FXCollections.observableArrayList();
@@ -527,7 +527,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
                             if (!datos[4].equals("0")){
                                 cPadre = datos[4];
                             }
-                            Cuenta cuenta = new Cuenta(datos[0],datos[1],tCuenta, datos[3], cPadre, datos[5], datos[6], datos[7], datos[8], datos[9],Float.parseFloat(datos[10]));
+                            Cuenta cuenta = new Cuenta(datos[0],datos[1],tCuenta, datos[3], cPadre, datos[5], datos[6], datos[7], Float.parseFloat(datos[8]), Float.parseFloat(datos[9]),Float.parseFloat(datos[10]));
                             userList.add(cuenta);
 
                         }
