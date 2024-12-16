@@ -7,6 +7,27 @@ public class ConsultaGenController implements CambioPanel {
 
     private PrincipalController panelPadre;
 
+    public void cConsultaCatalogo(){
+        try {
+            if (panelPadre != null){
+                panelPadre.cMantenimientos("/Consultas/PorCatalogo.fxml");
+            }
+
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
+    }
+
+    public void cConsultaTrans(){
+        try {
+            if (panelPadre != null){
+                panelPadre.cMantenimientos("/Consultas/PorTrans.fxml");
+            }
+
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
+    }
 
     public void returnMenu(){
         panelPadre.gotoMenu();
