@@ -540,7 +540,7 @@ public class PanelMovimientosController implements Initializable {
         btn_save.setDisable(true);
         btn_add.setDisable(true);
         btn_delete.setDisable(true);
-        String[] docType = {"Ventas", "Compras", "Notas de débito", "Notas de crédito"};
+        String[] docType = {"Factura", "Notas de débito", "Notas de crédito", "Doc. Interno"};
         cbox_tipoDocumento.getItems().addAll(docType);
 
         BooleanBinding areAllFilled = Bindings.createBooleanBinding(() ->

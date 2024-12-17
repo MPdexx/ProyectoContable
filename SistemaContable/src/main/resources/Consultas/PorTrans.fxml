@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/Css/Mantenimientos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlConsultas.PorTransController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="pane_border" />
+   </styleClass>
+   <children>
+      <TableView fx:id="tview_trans" layoutX="11.0" layoutY="178.0" prefHeight="483.0" prefWidth="994.0">
+         <columns>
+            <TableColumn fx:id="col_nDocumento" prefWidth="141.60000610351562" text="Número de documento" />
+            <TableColumn fx:id="col_fecha" prefWidth="131.199951171875" text="Fecha " />
+            <TableColumn fx:id="col_tipo" prefWidth="89.5999755859375" text="Tipo" />
+            <TableColumn fx:id="col_descripcion" prefWidth="151.20001220703125" text="Descripcion" />
+            <TableColumn fx:id="col_hechoPor" prefWidth="96.0" text="Hecho por" />
+            <TableColumn fx:id="col_monto" prefWidth="102.4000244140625" text="Monto" />
+            <TableColumn fx:id="col_fActualizacion" prefWidth="141.60003662109375" text="Fecha de actualización" />
+            <TableColumn fx:id="col_estadoActualizacion" prefWidth="142.4000244140625" text="Estado de actualización" />
+         </columns>
+      </TableView>
+      <Button fx:id="btn_return" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnMenu" prefHeight="32.0" prefWidth="43.0">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="31.0" onDragDetected="#returnMenu" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/return.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <DatePicker fx:id="date_fCreacion" layoutX="96.0" layoutY="93.0" prefHeight="32.0" prefWidth="175.0" />
+      <Label fx:id="lbl_fCreacion" layoutX="96.0" layoutY="67.0" text="Fecha">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_clean" layoutX="913.0" layoutY="17.0" mnemonicParsing="false" onAction="#limpiar" styleClass="btn_search" stylesheets="@../Css/Mantenimientos.css" text="Limpiar" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI" size="13.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="cbox_filtro" layoutX="698.0" layoutY="93.0" prefHeight="32.0" prefWidth="157.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label layoutX="698.0" layoutY="67.0" text="Filtro">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date_fInicio" layoutX="97.0" layoutY="93.0" prefHeight="32.0" prefWidth="175.0" />
+      <Label fx:id="lbl_fInicio" layoutX="97.0" layoutY="67.0" text="Fecha inicio">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date_fFinal" layoutX="305.0" layoutY="93.0" prefHeight="32.0" prefWidth="175.0" />
+      <Label fx:id="lbl_fFinal" layoutX="305.0" layoutY="67.0" text="Fecha final">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_nDocumento" layoutX="96.0" layoutY="67.0" text="Numero de documento">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtf_nDocumento" layoutX="96.0" layoutY="93.0" prefHeight="32.0" prefWidth="133.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ChoiceBox fx:id="cbox_tipo" layoutX="96.0" layoutY="93.0" prefHeight="32.0" prefWidth="139.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label fx:id="lbl_tipoDocumento" layoutX="96.0" layoutY="67.0" text="Tipo de documento">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

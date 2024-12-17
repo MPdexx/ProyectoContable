@@ -29,6 +29,17 @@ public class ConsultaGenController implements CambioPanel {
         }
     }
 
+    public void cConsultaBal(){
+        try {
+            if (panelPadre != null){
+                panelPadre.cMantenimientos("/Consultas/BalanzaSelect.fxml");
+            }
+
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
+    }
+
     public void returnMenu(){
         panelPadre.gotoMenu();
     }
