@@ -40,6 +40,28 @@ public class ConsultaGenController implements CambioPanel {
         }
     }
 
+    public void cConsultaGastGenerales(){
+        try {
+            if (panelPadre != null){
+                panelPadre.cMantenimientos("/Consultas/GastosGenerales.fxml");
+            }
+
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
+    }
+
+    public void cEstado(){
+        try {
+            if (panelPadre != null){
+                panelPadre.cMantenimientos("/Consultas/EstadoGyP.fxml");
+            }
+
+        }catch (Exception ex){
+            System.out.printf(String.valueOf(ex));
+        }
+    }
+
     public void returnMenu(){
         panelPadre.gotoMenu();
     }

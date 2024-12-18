@@ -1,0 +1,15 @@
+DOC-001;1;11021;500000.0;0.0;Deposito Banco Popular
+DOC-001;2;3101;0.0;500000.0;Inicial Cuenta de Capital
+FACT-1252;1;12031;60000.0;0.0;Sin comentarios
+FACT-1252;2;2102;0.0;60000.0;Sin comentarios
+DOC-02;1;11011;5000.0;0.0;Sin comentarios
+DOC-02;2;11021;0.0;5000.0;Sin comentarios
+FACT-0125;1;52111;500.0;0.0;Sin comentarios
+FACT-0125;2;52121;300.0;0.0;Sin comentarios
+FACT-0125;3;52118;400.0;0.0;Sin comentarios
+FACT-0125;4;52119;300.0;0.0;Sin comentarios
+FACT-0125;5;11021;0.0;1500.0;Sin comentarios
+Fact-1452;1;2102;30000.0;0.0;Sin comentarios
+Fact-1452;2;11021;0.0;30000.0;Sin comentarios
+FACT-010;1;11021;100000.0;0.0;Sin comentarios
+FACT-010;2;4101;0.0;100000.0;Sin comentarios

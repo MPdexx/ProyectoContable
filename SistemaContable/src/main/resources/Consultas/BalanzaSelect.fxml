@@ -12,7 +12,7 @@
       <String fx:value="pane_border" />
    </styleClass>
    <children>
-      <Button fx:id="btn_balGeneral" contentDisplay="CENTER" layoutX="200.0" layoutY="229.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Balanza general" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button fx:id="btn_balGeneral" contentDisplay="CENTER" layoutX="200.0" layoutY="229.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cBalGeneral" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Balanza general" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
       <Button fx:id="btn_balComprobacion" contentDisplay="CENTER" layoutX="608.0" layoutY="229.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cBalComprobacion" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Balanza de comprobacion" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
       <Button fx:id="btn_return" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnMenu" prefHeight="32.0" prefWidth="43.0">
          <graphic>

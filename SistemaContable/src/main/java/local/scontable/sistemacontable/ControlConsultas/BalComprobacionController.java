@@ -186,8 +186,10 @@ public class BalComprobacionController implements Initializable, CambioPanel {
         });*/
     }
 
-    public void returnMenu(){
-
+    public void returnMenu() throws IOException {
+        if (panelPadre != null) {
+            panelPadre.cMantenimientos("/Consultas/BalanzaSelect.fxml");
+        }
     }
 
     @Override

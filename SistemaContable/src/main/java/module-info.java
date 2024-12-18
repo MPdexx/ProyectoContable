@@ -7,7 +7,7 @@ module local.scontable.sistemacontable {
 
     opens local.scontable.sistemacontable to javafx.fxml;
     exports local.scontable.sistemacontable;
-    exports local.scontable.sistemacontable.ControlMantenimientos;
+    exports local.scontable.sistemacontable.ControlMantenimientos to javafx.fxml;
     exports local.scontable.sistemacontable.ControlMovimientos to javafx.fxml;
     exports local.scontable.sistemacontable.ControlProcesos to javafx.fxml;
     exports local.scontable.sistemacontable.ControlConsultas to javafx.fxml;

@@ -1,186 +1,186 @@
-11061;Materiales de Oficina;false;4;1106;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11063;Materiales de Limpieza;false;4;1106;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12031;Mobiliario;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11062;Insumos Odontológicos;false;4;1106;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12033;Equipos de Oficina;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5301;Cargos Bancarios (0.15% Banco Central);false;3;53;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52051;Activos de la Categoría I (Gastos de Alquileres);false;4;5205;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52052;Activos de la Categoría II;false;4;5205;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52053;Activos de la Categoría III;false;4;5205;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12035;Equipos de Cómputos y Comunicaciones;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210301;Provisión para Salario de Navidad;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210421;ITBIS Retenido Sobre Ventas;false;5;21042;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12037;Equipos de Transportes Livianos;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210305;Provisiones ISR;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12038;Deprec. Acumulada Activo Categoría II;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210304;Provisión para Bonificación;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210303;Provisión para Prestaciones Laborales;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210302;Provisión para Vacaciones;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11;Activos Circulantes;true;2;1;Activo;09/12/2024;03:01:24 p.m.;400.00;100.00;300.00
-12;Activos Fijos;true;0;0;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11072;Alquileres Pagados por Adelantado;false;4;1107;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-13;Pagos Anticipados;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11071;Seguros Pagados por Adelantado;false;4;1107;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-14;Activos Diferidos;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-13011;ITBIS Avanzado en Compras;false;4;1301;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12041;Equipos Odontológicos;false;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-13012;Anticipos ISR;false;4;1301;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12044;Maquinaria y Equipos;true;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4101;Ingresos por Servicios-Interfaz;false;3;41;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12043;Instrumental Odontológico;true;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52061;Vehículos;false;4;5206;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52062;Negocio en General;false;4;5206;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-120;Propiedad, Planta y Equipos;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1107;Gastos Pagados por Adelantado;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1;Activos;true;0;0;Activo;09/12/2024;03:01:24 p.m.;400.00;100.00;300.00
-1106;Materiales e Insumos;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1105;Cuentas por Cobrar;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2;Pasivos;true;0;0;Pasivo;09/12/2024;03:01:24 p.m.;100.00;400.00;300.00
-52063;Seguro de Vida;false;4;5206;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1104;Valores Negociables;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-3;Capital;true;0;0;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1103;Fondos en Caja;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4;Ingresos;true;0;0;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52102;Honorarios a Profesionales;false;4;5210;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1102;Efectivo en Bancos;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1101;Efectivo en Caja;true;3;11;Activo;09/12/2024;03:01:24 p.m.;400.00;100.00;300.00
-51014;Descuentos Sobre Compras de Materiales;false;4;5101;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-51013;Devoluciones sobre Compras de Materiales;false;4;5101;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52101;Software Soporte Técnico;false;4;5210;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12046;Deprec. Acumulada Activo Categoría III;false;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5302;Intereses y Comisión Sobre Préstamos Bancarios;false;3;53;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12045;Otros Activos Depreciables;false;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5303;Cargos y Comisiones Bancarias;false;3;53;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-21;Pasivos a Corto Plazo;true;2;2;Pasivo;09/12/2024;03:01:24 p.m.;100.00;400.00;300.00
-22;Pasivos a Largo Plazo;true;2;2;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11041;Depósitos a Plazo Fijo;false;4;1104;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12011;Terreno;false;4;1201;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5201;Nómina;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11042;Intereses por Cobrar;false;4;1104;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5202;Gastos de Mantenimiento;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520113;Horas Extras;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520114;Comisiones;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520115;Mano de Obra por Contrato;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52072;En Televisión;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52073;En Periódicos;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52071;En Radio;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52074;En Letreros y Afiches;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52113;Envíos de Documentos;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520121;Seguro Médico y Dental;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52114;Servicios Agua;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2201;Documentos por Pagar;false;3;22;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520122;Salario de Navidad;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52111;Materiales y Suministros de Oficina;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520123;Vacaciones;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52112;Gastos de Comunicación;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52117;Gastos de Representación;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12012;Construcciones en Proceso;false;4;1201;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52118;Gastos Misceláneos;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52115;Atenciones a Empleados y Visitantes;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52116;Servicios de Energía Eléctrica;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210602;Otras Cuentas por Pagar;false;4;2106;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210601;Tarjeta de Crédito por Pagar;false;4;2106;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-31;Capital Invertido;true;2;3;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52119;Combustibles y Lubricantes;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-32;Utilidades del Periodo;true;2;3;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11052;Cuentas por Cobrar Clientes;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5210;Honorarios Profesionales y Consultores;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11051;Cuentas por Cobrar (Interfaz);false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5211;Gastos Indirectos;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11054;Cuentas por Cobrar Funcionarios;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12022;Deprec. Acumulada - Activo Categoría I;false;4;1202;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11053;Cuentas por Cobrar Empleados;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-12021;Edificio;false;4;1202;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520124;Bonificación;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520125;Otros Beneficios a Empleados;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1404;Amortización Organiz. y Const. de Cía.;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52120;Cuentas Incobrables;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1403;Organización y Constitución de Compañía;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52121;Materiales de Limpieza;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1402;Amortización Mejoras Local Arrendado;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1401;Mejoras a Local Arrendado;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520131;Aportes a Instituciones Estatales;true;5;52013;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52122;Insumos Odontológicos;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5203;Gastos de Depreciación;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11055;Reserva para Cuentas Dudosas;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5204;Amortización;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5205;Alquileres y Arrendamientos;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5206;Seguros;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1408;Depósitos y Fianzas;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5207;Gastos de Publicidad;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1407;Licencia de Software;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-41;Ingresos por Servicios;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1406;Amortización Estudio y Eval. de Proyecto;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-42;Otros Ingresos;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5209;Impuestos (Otros);true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1405;Estudio y Evaluación de Proyectos;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-43;Ingresos Financieros;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5101;Devoluciones y Descuentos de Materiales;true;0;0;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11021;Banco Popular Dominicano;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52091;Impuestos Ventas/Compras;false;4;5209;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52092;Impuestos a la Propiedad;false;4;5209;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52093;Impuestos a la Cont. Residuo Sólido IR-2-ISFL;false;4;5209;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52011;Sueldos;true;4;5201;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2106;Tarjeta de Crédito;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2105;Acumulaciones por Pagar;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2104;Impuesto por Pagar;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2103;Provisiones por Pagar;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2102;Cuentas por Pagar Proveedores;false;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52012;Beneficios a los Empleados;true;4;5201;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-2101;Cuentas por Pagar Interfaz;false;3;21;Pasivo;09/12/2024;03:01:24 p.m.;100.00;400.00;300.00
-52013;Aportes Patronales;true;4;5201;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11023;Banco Santa Cruz;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11022;Banco BHD;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11025;Cuenta de Nόmina;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-51;Devoluciones y Descuentos;true;0;0;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11026;Cuenta de Ahorros;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210502;Gastos Acumulados por Pagar;false;4;2105;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52;Gastos Generales y Administrativos;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210501;Intereses por Pagar;false;4;2105;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-53;Gastos Financieros;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-54;Impuestos Sobre las Utilidades;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11031;Fondo para Caja Registradora;false;4;1103;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52021;Activos de la Categoría I;false;4;5202;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52022;Activos de la Categoría II;false;4;5202;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1301;Impuestos Anticipados;true;3;13;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-3203;Reserva Legal;false;5;32;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-3202;Ganancias Y/O Pérdidas;false;4;32;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52023;Activos de la Categoría III;false;4;5202;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-3201;Utilidades Retenidas;false;3;32;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520112;Incentivos;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-520111;Gastos de Sueldos Empleados y Funcionarios;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5201314;INFOTEP;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5201315;Riesgos Laborales;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-21044;Impuestos Cont. Residuo Sólido por Pagar;false;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-21043;Impuestos a la Propiedad;false;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-3101;Capital Social;false;3;31;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5201311;Seguro Social;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5201312;SVDS;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5201313;SFS;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52032;Activos de la Categoría II;false;4;5203;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52033;Activos de la Categoría III;false;4;5203;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52031;Activos de la Categoría I;false;4;5203;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-21042;Impuestos Sobre Ventas;true;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4301;Intereses por Inversiones;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-21041;Deducciones Salariales;true;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4302;Intereses Ganados en Cuentas Corrientes;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4303;Dividendos;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4304;Descuentos Otorgados;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-4201;Comisiones por Cobros de Servicios;false;3;42;Ingresos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1204;Activos de la Categoría III;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210417;Otras Retenciones por Pagar;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52041;Mejoras a Arrendamientos;false;4;5204;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1203;Activos de la Categoría II;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210416;Retención INFOTEP (0.50% Bonificación);false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-52042;Gastos de Organización;false;4;5204;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1202;Activos de la Categoría I;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-1201;Activos no Depreciables;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-3102;Dividendos;false;3;31;Capital;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210411;Retenciones ISR Empleados;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-5401;Impuestos Sobre la Renta;false;3;54;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-11011;Caja Chica;false;4;1101;Activo;09/12/2024;03:01:24 p.m.;400.00;100.00;300.00
-5402;Diferencia;false;3;54;Gastos;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210415;Retención Seguro Social;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210414;Retenciones SFS;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210413;Retenciones SVDS;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
-210412;Retenciones ISR Trabajos Independientes;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.00;0.00;0.00
+1;Activos;true;0;0;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11;Activos Circulantes;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1101;Efectivo en Caja;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11011;Caja Chica;false;4;1101;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1102;Efectivo en Bancos;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11021;Banco Popular Dominicano;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11022;Banco BHD;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11023;Banco Santa Cruz;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11025;Cuenta de Nόmina;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11026;Cuenta de Ahorros;false;4;1102;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1103;Fondos en Caja;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11031;Fondo para Caja Registradora;false;4;1103;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1104;Valores Negociables;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11041;Depósitos a Plazo Fijo;false;4;1104;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11042;Intereses por Cobrar;false;4;1104;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1105;Cuentas por Cobrar;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11051;Cuentas por Cobrar (Interfaz);false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11052;Cuentas por Cobrar Clientes;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11053;Cuentas por Cobrar Empleados;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11054;Cuentas por Cobrar Funcionarios;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11055;Reserva para Cuentas Dudosas;false;4;1105;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1106;Materiales e Insumos;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11061;Materiales de Oficina;false;4;1106;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11062;Insumos Odontológicos;false;4;1106;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11063;Materiales de Limpieza;false;4;1106;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1107;Gastos Pagados por Adelantado;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11071;Seguros Pagados por Adelantado;false;4;1107;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+11072;Alquileres Pagados por Adelantado;false;4;1107;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12;Activos Fijos;true;2;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+120;Propiedad, Planta y Equipos;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1201;Activos no Depreciables;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12011;Terreno;false;4;1201;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12012;Construcciones en Proceso;false;4;1201;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1202;Activos de la Categoría I;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12021;Edificio;false;4;1202;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12022;Deprec. Acumulada - Activo Categoría I;false;4;1202;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1203;Activos de la Categoría II;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12031;Mobiliario;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12033;Equipos de Oficina;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12035;Equipos de Cómputos y Comunicaciones;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12037;Equipos de Transportes Livianos;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12038;Deprec. Acumulada Activo Categoría II;false;4;1203;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1204;Activos de la Categoría III;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12041;Equipos Odontológicos;false;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12043;Instrumental Odontológico;true;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12044;Maquinaria y Equipos;true;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12045;Otros Activos Depreciables;false;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12046;Deprec. Acumulada Activo Categoría III;false;4;1204;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+13;Pagos Anticipados;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1301;Impuestos Anticipados;true;3;13;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+13011;ITBIS Avanzado en Compras;false;4;1301;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+13012;Anticipos ISR;false;4;1301;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+14;Activos Diferidos;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1401;Mejoras a Local Arrendado;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1402;Amortización Mejoras Local Arrendado;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1403;Organización y Constitución de Compañía;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1404;Amortización Organiz. y Const. de Cía.;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1405;Estudio y Evaluación de Proyectos;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1406;Amortización Estudio y Eval. de Proyecto;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1407;Licencia de Software;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+1408;Depósitos y Fianzas;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2;Pasivos;true;1;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+21;Pasivos a Corto Plazo;true;2;2;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2101;Cuentas por Pagar Interfaz;false;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2102;Cuentas por Pagar Proveedores;false;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2103;Provisiones por Pagar;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210301;Provisión para Salario de Navidad;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210302;Provisión para Vacaciones;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210303;Provisión para Prestaciones Laborales;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210304;Provisión para Bonificación;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210305;Provisiones ISR;false;4;2103;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2104;Impuesto por Pagar;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+21041;Deducciones Salariales;true;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210411;Retenciones ISR Empleados;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210412;Retenciones ISR Trabajos Independientes;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210413;Retenciones SVDS;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210414;Retenciones SFS;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210415;Retención Seguro Social;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210416;Retención INFOTEP (0.50% Bonificación);false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210417;Otras Retenciones por Pagar;false;5;21041;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+21042;Impuestos Sobre Ventas;true;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210421;ITBIS Retenido Sobre Ventas;false;5;21042;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+21043;Impuestos a la Propiedad;false;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+21044;Impuestos Cont. Residuo Sólido por Pagar;false;4;2104;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2105;Acumulaciones por Pagar;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210501;Intereses por Pagar;false;4;2105;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210502;Gastos Acumulados por Pagar;false;4;2105;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2106;Tarjeta de Crédito;true;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210601;Tarjeta de Crédito por Pagar;false;4;2106;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+210602;Otras Cuentas por Pagar;false;4;2106;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+22;Pasivos a Largo Plazo;true;2;2;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2201;Documentos por Pagar;false;3;22;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3;Capital;true;1;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+31;Capital Invertido;true;2;3;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3101;Capital Social;false;3;31;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3102;Dividendos;false;3;31;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+32;Utilidades del Periodo;true;2;3;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3201;Utilidades Retenidas;false;3;32;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3202;Ganancias Y/O Pérdidas;false;4;32;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3203;Reserva Legal;false;5;32;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4;Ingresos;true;1;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+41;Ingresos por Servicios;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4101;Ingresos por Servicios-Interfaz;false;3;41;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+42;Otros Ingresos;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4201;Comisiones por Cobros de Servicios;false;3;42;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+43;Ingresos Financieros;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4301;Intereses por Inversiones;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4302;Intereses Ganados en Cuentas Corrientes;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4303;Dividendos;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4304;Descuentos Otorgados;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+51;Devoluciones y Descuentos;true;3;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5101;Devoluciones y Descuentos de Materiales;true;3;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+51013;Devoluciones sobre Compras de Materiales;false;4;5101;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+51014;Descuentos Sobre Compras de Materiales;false;4;5101;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52;Gastos Generales y Administrativos;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5201;Nómina;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52011;Sueldos;true;4;5201;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520111;Gastos de Sueldos Empleados y Funcionarios;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520112;Incentivos;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520113;Horas Extras;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520114;Comisiones;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520115;Mano de Obra por Contrato;false;5;52011;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52012;Beneficios a los Empleados;true;4;5201;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520121;Seguro Médico y Dental;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520122;Salario de Navidad;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520123;Vacaciones;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520124;Bonificación;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520125;Otros Beneficios a Empleados;false;5;52012;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52013;Aportes Patronales;true;4;5201;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+520131;Aportes a Instituciones Estatales;true;5;52013;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0;
+5201311;Seguro Social;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5201312;SVDS;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5201313;SFS;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5201314;INFOTEP;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5201315;Riesgos Laborales;false;6;520131;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5202;Gastos de Mantenimiento;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52021;Activos de la Categoría I;false;4;5202;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52022;Activos de la Categoría II;false;4;5202;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52023;Activos de la Categoría III;false;4;5202;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5203;Gastos de Depreciación;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52031;Activos de la Categoría I;false;4;5203;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52032;Activos de la Categoría II;false;4;5203;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52033;Activos de la Categoría III;false;4;5203;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5204;Amortización;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52041;Mejoras a Arrendamientos;false;4;5204;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52042;Gastos de Organización;false;4;5204;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5205;Alquileres y Arrendamientos;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52051;Activos de la Categoría I (Gastos de Alquileres);false;4;5205;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52052;Activos de la Categoría II;false;4;5205;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52053;Activos de la Categoría III;false;4;5205;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5206;Seguros;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52061;Vehículos;false;4;5206;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52062;Negocio en General;false;4;5206;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52063;Seguro de Vida;false;4;5206;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5207;Gastos de Publicidad;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52071;En Radio;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52072;En Televisión;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52073;En Periódicos;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52074;En Letreros y Afiches;false;4;5207;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5209;Impuestos (Otros);true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52091;Impuestos Ventas/Compras;false;4;5209;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52092;Impuestos a la Propiedad;false;4;5209;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52093;Impuestos a la Cont. Residuo Sólido IR-2-ISFL;false;4;5209;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5210;Honorarios Profesionales y Consultores;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52101;Software Soporte Técnico;false;4;5210;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52102;Honorarios a Profesionales;false;4;5210;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5211;Gastos Indirectos;true;3;52;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52111;Materiales y Suministros de Oficina;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52112;Gastos de Comunicación;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52113;Envíos de Documentos;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52114;Servicios Agua;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52115;Atenciones a Empleados y Visitantes;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52116;Servicios de Energía Eléctrica;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52117;Gastos de Representación;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52118;Gastos Misceláneos;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52119;Combustibles y Lubricantes;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52120;Cuentas Incobrables;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52121;Materiales de Limpieza;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+52122;Insumos Odontológicos;false;4;5211;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+53;Gastos Financieros;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5301;Cargos Bancarios (0.15% Banco Central);false;3;53;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5302;Intereses y Comisión Sobre Préstamos Bancarios;false;3;53;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5303;Cargos y Comisiones Bancarias;false;3;53;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+54;Impuestos Sobre las Utilidades;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5401;Impuestos Sobre la Renta;false;3;54;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5402;Diferencia;false;3;54;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0

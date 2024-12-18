@@ -14,9 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import local.scontable.sistemacontable.Clases.CambioPanel;
-import local.scontable.sistemacontable.Clases.EnDeCrypt;
-import local.scontable.sistemacontable.Clases.Usuario;
+import local.scontable.sistemacontable.Clases.*;
 import local.scontable.sistemacontable.PrincipalController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -52,7 +50,6 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
 
 
     //Guardar los datos en un archivo de texto
-    //FALTA ADICIONAR UNA CONDICION (
     public void saveData() {
         String nUser, nUserReal, lnUser, pass, email;
         int lvlUser = 0;
@@ -316,6 +313,7 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
         btn_edit.setDisable(true);
         btn_delete.setDisable(true);
         tview_users.setEditable(false);
+        SharedControllerUser.getInstance().setPestañaReceptoraController(this);
 
         col_nUser.setCellValueFactory(cellData -> cellData.getValue().nUserProperty());
         col_nUserReal.setCellValueFactory(cellData -> cellData.getValue().nUserRealProperty());
@@ -448,8 +446,9 @@ public class MantenimientoUsuariosInController implements Initializable, CambioP
     public void reload(){
         try{
             userList = FXCollections.observableArrayList();
+            filteredData = new FilteredList<>(userList,p-> true);
             loadFile(archivo);
-            tview_users.setItems(userList);
+            tview_users.setItems(filteredData);
         }catch (Exception ex){
             System.out.println(ex);
         }

@@ -123,7 +123,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_reload" layoutX="768.0" layoutY="14.0" mnemonicParsing="false" onAction="#reload" text="Actualizar" />
       <PasswordField fx:id="txtf_pass" layoutX="427.0" layoutY="398.0" prefHeight="32.0" prefWidth="203.0" />
    </children>
 </AnchorPane>

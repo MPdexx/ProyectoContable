@@ -345,6 +345,7 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
         cbox_tipoCuenta.getItems().addAll(accType);
         cbox_nivelCuenta.getItems().addAll(accLvl);
         cbox_grupoCuenta.getItems().addAll(accGroup);
+        SharedController.getInstance().setPestañaReceptoraController(this);
 
 
         // Actualizar fecha y hora al iniciar
@@ -492,12 +493,14 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
     public void reload(){
         try{
             userList = FXCollections.observableArrayList();
+            filteredData = new FilteredList<>(userList,p-> true);
             loadFile(archivo);
-            tview_cuenta.setItems(userList);
+            tview_cuenta.setItems(filteredData);
         }catch (Exception ex){
             System.out.println(ex);
         }
     }
+
 
     @Override
     public void setPanelPadre(PrincipalController panelPadre) {

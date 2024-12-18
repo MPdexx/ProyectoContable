@@ -10,6 +10,8 @@ import javafx.scene.control.ComboBox;
 
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import local.scontable.sistemacontable.Clases.SharedController;
+import local.scontable.sistemacontable.Clases.SharedControllerUser;
 
 import java.io.*;
 import java.net.URL;
@@ -88,8 +90,14 @@ public class Man_UsuariosEditController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Info");
                 alert.setHeaderText("Usuario editado correctamente");
+                MantenimientoUsuariosInController receptor = SharedControllerUser.getInstance().getPestañaReceptoraController();
+                if (receptor != null) {
+                    receptor.reload();
+                }
                 alert.setContentText("Los campos se han editado correctamente");
                 alert.showAndWait();
+                Stage stage = (Stage) btn_save.getScene().getWindow();
+                stage.close();
             } else {
                 Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Error");

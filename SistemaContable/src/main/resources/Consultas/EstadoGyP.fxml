@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pn_mantenimientos" layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="1016.0" stylesheets="/Css/Mantenimientos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="local.scontable.sistemacontable.ControlConsultas.EstadoGyPController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="pane_border" />
+   </styleClass>
+   <children>
+      <Button fx:id="btn_return" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnMenu" prefHeight="32.0" prefWidth="43.0">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="31.0" onDragDetected="#returnMenu" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/return.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <PieChart fx:id="pchart_GyP" layoutX="674.0" layoutY="46.0" prefHeight="253.0" prefWidth="304.0" title="Ganancias / Gastos" />
+      <TableView fx:id="tview_cuenta" layoutX="21.0" layoutY="309.0" prefHeight="362.0" prefWidth="994.0">
+         <columns>
+            <TableColumn fx:id="col_nCuenta" prefWidth="165.0" text="Número Cuenta" />
+            <TableColumn fx:id="col_descripcion" prefWidth="165.0" text="Descripción" />
+            <TableColumn fx:id="col_grupo" prefWidth="165.0" text="Grupo" />
+            <TableColumn fx:id="col_debitoAc" prefWidth="165.0" text="Débito Acumulado" />
+            <TableColumn fx:id="col_creditoAc" prefWidth="165.0" text="Credito Acumulado" />
+            <TableColumn fx:id="col_balance" prefWidth="165.60007324218748" text="Balance" />
+         </columns>
+      </TableView>
+      <ChoiceBox fx:id="cbox_filtro" layoutX="89.0" layoutY="157.0" prefHeight="32.0" prefWidth="119.0" />
+      <Label layoutX="89.0" layoutY="135.0" prefHeight="21.0" prefWidth="35.0" text="Filtro">
+         <font>
+            <Font name="Nirmala UI" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="33.0" prefHeight="26.0" prefWidth="130.0" text="Total Ganancias:">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="63.0" prefHeight="26.0" prefWidth="130.0" text="Total Perdidas:">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="92.0" prefHeight="26.0" prefWidth="130.0" text="Total neto:">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_ganancias" layoutX="508.0" layoutY="33.0" prefHeight="26.0" prefWidth="130.0" text="Numero123">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_perdidas" layoutX="508.0" layoutY="63.0" prefHeight="26.0" prefWidth="130.0" text="Numero123">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_neto" layoutX="508.0" layoutY="92.0" prefHeight="26.0" prefWidth="130.0" text="Numero123">
+         <font>
+            <Font name="Nirmala UI" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

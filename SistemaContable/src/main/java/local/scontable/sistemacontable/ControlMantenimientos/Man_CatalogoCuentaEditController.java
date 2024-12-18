@@ -1,12 +1,16 @@
 package local.scontable.sistemacontable.ControlMantenimientos;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import local.scontable.sistemacontable.Clases.CambioPanel;
+import local.scontable.sistemacontable.Clases.SharedController;
 
 import java.io.*;
 import java.net.URL;
@@ -25,7 +29,6 @@ public class Man_CatalogoCuentaEditController implements Initializable {
     ChoiceBox<String> cbox_tipo, cbox_Lvl, cbox_grupo;
     private static String archivo = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cuentas.txt";
     private static String archivo1 = "C:\\ProjectoParcialJava\\SistemaContable\\src\\main\\resources\\Datos\\cuentas1.txt";
-   // private MantenimientoCatalogoCuentaInController mant = new MantenimientoCatalogoCuentaInController();
 
     public void getCuenta(int nroCuenta1, String desCuenta1, boolean tipoCuenta1, int lvlCuenta1, int ctaPadre1, String grpCuenta1, String fCreacion1, String hCreacion1, float DebitoAc1, float CreditoAc1, float BalanceCta1, boolean esCPadre){
         this.txtf_nCuenta.setText(String.valueOf(nroCuenta1));
@@ -40,6 +43,8 @@ public class Man_CatalogoCuentaEditController implements Initializable {
         this.txtf_CreditoAc.setText(String.valueOf(CreditoAc1));
         this.txtf_BalanceAc.setText(String.valueOf(BalanceCta1));
         this.esCuentaPadre = esCPadre;
+        this.txtf_desCuentaEdit.setText(desCuenta1);
+        this.txtf_CuentaPadre.setText(String.valueOf(ctaPadre1));
     }
 
     public void SaveChanges(){
@@ -50,20 +55,21 @@ public class Man_CatalogoCuentaEditController implements Initializable {
              BufferedWriter writer = new BufferedWriter(new FileWriter(temporal)))
         {
             String linea;
-
+            nCuenta = txtf_nCuenta.getText();
+            System.out.println(nCuenta);
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(";");
-                if (datos.length == 6 && datos[0].equals(nCuenta)) { // Usuario encontrado
+                if (datos[0].equals(nCuenta)) { // Usuario encontrado
                     // Usar los datos existentes si no se editaron
                     int nCuenta = Integer.parseInt(datos[0]); // Campo clave, no editable
-                    String desCuenta = txtf_desCuentaEdit.getText().isEmpty() ? datos[1] : txtf_desCuenta.getText();
+                    String desCuenta = txtf_desCuentaEdit.getText().isEmpty() ? datos[1] : txtf_desCuentaEdit.getText();
                     boolean tipo = cbox_tipo.getValue() == null ? Boolean.parseBoolean(datos[2]) : Boolean.valueOf(cbox_tipo.getValue().equals("General")) ? true : false;
                     int lvl = cbox_Lvl.getValue() == null ? Integer.parseInt(datos[3]) : Integer.parseInt(cbox_Lvl.getValue());
                     int cuentaPadre = txtf_CuentaPadre.getText().isEmpty() ? Integer.parseInt(datos[4]) : Integer.parseInt(txtf_CuentaPadre.getText());
                     String grupo = cbox_grupo.getValue() == null ? datos[5] : cbox_grupo.getValue();
 
                     // Escribir los datos editados en el archivo temporal
-                    writer.write(nCuenta + ";" + desCuenta + ";" + tipo + ";" + lvl + ";" + cuentaPadre + ";" + grupo);
+                    writer.write(nCuenta + ";" + desCuenta + ";" + tipo + ";" + lvl + ";" + cuentaPadre + ";" + grupo + ";" + datos[6] + ";" + datos[7] + ";" + datos[8] + ";" + datos[9] + ";" + datos[10]);
                 } else {
                     // Escribir las líneas que no coincidan sin cambios
                     writer.write(linea);
@@ -82,7 +88,10 @@ public class Man_CatalogoCuentaEditController implements Initializable {
                 alert.setHeaderText("Cuenta editada correctamente");
                 alert.setContentText("Los campos se han editado correctamente");
                 alert.showAndWait();
-                //mant.reload();
+                MantenimientoCatalogoCuentaInController receptor = SharedController.getInstance().getPestañaReceptoraController();
+                if (receptor != null) {
+                    receptor.reload();
+                }
                 Stage stage = (Stage) btn_save.getScene().getWindow();
                 stage.close();
             } else {
@@ -107,5 +116,12 @@ public class Man_CatalogoCuentaEditController implements Initializable {
         if (esCuentaPadre){
             txtf_Tipo.setDisable(true);
         }
+        String[] accType = {"General", "Detalle"};
+        String[] accLvl = {"0","1","2","3","4","5","6"};
+        String[] accGroup = {"Activo", "Pasivo", "Capital", "Ingresos", "Costos", "Gastos"};
+        cbox_tipo.getItems().addAll(accType);
+        cbox_Lvl.getItems().addAll(accLvl);
+        cbox_grupo.getItems().addAll(accGroup);
+
     }
 }

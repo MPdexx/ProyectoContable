@@ -7,7 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import local.scontable.sistemacontable.Clases.CambioPanel;
 import local.scontable.sistemacontable.Clases.Cuenta;
+import local.scontable.sistemacontable.PrincipalController;
 
 import java.io.*;
 import java.net.URL;
@@ -17,7 +19,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class CierreDiarioController implements Initializable {
+public class CierreDiarioController implements Initializable, CambioPanel {
+    PrincipalController panelPadre;
     @FXML
     DatePicker date_inicio, date_final;
     @FXML
@@ -287,7 +290,7 @@ public class CierreDiarioController implements Initializable {
     }
 
     public void returnMenu(){
-
+        panelPadre.gotoMenu();
     }
 
     @Override
@@ -302,5 +305,10 @@ public class CierreDiarioController implements Initializable {
 
         );
         btn_save.disableProperty().bind(areAllFilled.not());
+    }
+
+    @Override
+    public void setPanelPadre(PrincipalController panelPadre) {
+        this.panelPadre = panelPadre;
     }
 }

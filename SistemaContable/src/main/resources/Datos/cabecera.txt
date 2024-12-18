@@ -1,0 +1,6 @@
+DOC-001;17/12/2024;Doc. Interno;Reportar Inversion Inicial;admin;500000.0;;false
+FACT-1252;17/12/2024;Factura;Compra Equipos Tecnologicos a credito;admin;60000.0;;false
+DOC-02;17/12/2024;Doc. Interno;Creacion Fondo Caja Chica;admin;5000.0;;false
+FACT-0125;17/12/2024;Factura;Reposicion Fondo Caja Chica;admin;1500.0;;false
+Fact-1452;17/12/2024;Factura;Abono Factura Proveedor;admin;30000.0;;false
+FACT-010;17/12/2024;Factura;Ingresos Por Servicios Prestados;admin;100000.0;;false

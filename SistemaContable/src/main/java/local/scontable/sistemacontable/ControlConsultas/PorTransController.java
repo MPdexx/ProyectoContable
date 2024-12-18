@@ -55,7 +55,7 @@ public class PorTransController implements Initializable, CambioPanel {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String[] filtro = {"Fecha", "Rango de fechas", "Numero documento", "Tipo documento"};
-        String[] docType = {"Ventas", "Compras", "Notas de débito", "Notas de crédito"};
+        String[] docType = {"Factura", "Notas de débito", "Notas de crédito", "Doc. Interno"};
         cbox_filtro.getItems().addAll(filtro);
         date_fCreacion.setVisible(false);
         lbl_fCreacion.setVisible(false);

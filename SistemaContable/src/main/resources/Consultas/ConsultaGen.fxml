@@ -24,7 +24,7 @@
          </graphic>
       </Button>
       <Button fx:id="btn_conBal" contentDisplay="CENTER" layoutX="150.0" layoutY="363.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cConsultaBal" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Por balanza" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button fx:id="btn_conEstGan" contentDisplay="CENTER" layoutX="658.0" layoutY="363.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Por estado de ganancias y pérdidas" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-      <Button fx:id="btn_conResGas" contentDisplay="CENTER" layoutX="404.0" layoutY="363.0" lineSpacing="1.0" mnemonicParsing="false" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Por resumen de gastos generales" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button fx:id="btn_conEstGan" contentDisplay="CENTER" layoutX="658.0" layoutY="363.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cEstado" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Por estado de ganancias y pérdidas" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+      <Button fx:id="btn_conResGas" contentDisplay="CENTER" layoutX="404.0" layoutY="363.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#cConsultaGastGenerales" prefHeight="195.0" prefWidth="207.0" styleClass="btnopc" stylesheets="/Css/MenuPrincipal.css" text="Por resumen de gastos generales" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
    </children>
 </AnchorPane>
