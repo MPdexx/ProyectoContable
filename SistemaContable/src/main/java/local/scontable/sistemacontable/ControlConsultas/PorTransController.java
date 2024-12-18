@@ -49,7 +49,11 @@ public class PorTransController implements Initializable, CambioPanel {
         }
     }
     public void limpiar(){
-
+        date_fFinal.setValue(null);
+        date_fInicio.setValue(null);
+        cbox_tipo.setValue("");
+        txtf_nDocumento.setText("");
+        date_fCreacion.setValue(null);
     }
 
     @Override
@@ -279,7 +283,6 @@ public class PorTransController implements Initializable, CambioPanel {
                     try {
                         if (datos.length == 8) {
                             String eActualizacion;// Validar formato correcto
-                            System.out.println(datos[6]);
                             String fActualizacion = "";
                             if (datos[7].equals("true")) {
                                 eActualizacion = "Actualizado";
@@ -291,7 +294,7 @@ public class PorTransController implements Initializable, CambioPanel {
 
                         }
                     } catch (Exception ex) {
-
+                        ex.printStackTrace();
                     }
 
                 }

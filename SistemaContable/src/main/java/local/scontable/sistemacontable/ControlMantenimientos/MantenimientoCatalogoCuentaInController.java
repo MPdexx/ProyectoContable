@@ -272,6 +272,10 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
 
             while ((linea = reader.readLine()) != null) {
                 String[] datos = linea.split(";");
+                int numeroCuentaArchivo = Integer.parseInt(datos[4]); // Convertir a entero para comparar
+                if (numeroCuentaArchivo == nCuenta) {
+                    esCuentaPadre = true; // La cuenta ya existe
+                }
                 if (datos.length == 11 && datos[0].equals(String.valueOf(nCuenta))) { // Validar por nombre de usuario
                     desCuenta = datos[1];
                     tipoCuenta = Boolean.parseBoolean(datos[2]);
@@ -284,14 +288,10 @@ public class MantenimientoCatalogoCuentaInController implements Initializable, C
                     CreditoAc = Float.parseFloat(datos[9]);
                     BalanceCta = Float.parseFloat(datos[10]);
                     cuentaExiste = true;
-                    int numeroCuentaArchivo = Integer.parseInt(datos[4]); // Convertir a entero para comparar
-                    if (numeroCuentaArchivo == nCuenta) {
-                        esCuentaPadre = true; // La cuenta ya existe
-                    }
                     if(BalanceCta >0){
                         noEdit = true;
                     }
-                    break;
+
                 }
             }
 

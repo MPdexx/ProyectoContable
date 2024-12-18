@@ -26,7 +26,7 @@
 1107;Gastos Pagados por Adelantado;true;3;11;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 11071;Seguros Pagados por Adelantado;false;4;1107;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 11072;Alquileres Pagados por Adelantado;false;4;1107;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
-12;Activos Fijos;true;2;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+12;Activos Fijos;true;2;0;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 120;Propiedad, Planta y Equipos;true;2;1;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 1201;Activos no Depreciables;true;3;12;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 12011;Terreno;false;4;1201;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
@@ -59,7 +59,7 @@
 1406;Amortización Estudio y Eval. de Proyecto;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 1407;Licencia de Software;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 1408;Depósitos y Fianzas;false;3;14;Activo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
-2;Pasivos;true;1;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+2;Pasivos;true;1;0;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 21;Pasivos a Corto Plazo;true;2;2;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 2101;Cuentas por Pagar Interfaz;false;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 2102;Cuentas por Pagar Proveedores;false;3;21;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
@@ -90,7 +90,7 @@
 210602;Otras Cuentas por Pagar;false;4;2106;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 22;Pasivos a Largo Plazo;true;2;2;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 2201;Documentos por Pagar;false;3;22;Pasivo;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
-3;Capital;true;1;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+3;Capital;true;1;0;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 31;Capital Invertido;true;2;3;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 3101;Capital Social;false;3;31;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 3102;Dividendos;false;3;31;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
@@ -98,7 +98,7 @@
 3201;Utilidades Retenidas;false;3;32;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 3202;Ganancias Y/O Pérdidas;false;4;32;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 3203;Reserva Legal;false;5;32;Capital;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
-4;Ingresos;true;1;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+4;Ingresos;true;1;0;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 41;Ingresos por Servicios;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 4101;Ingresos por Servicios-Interfaz;false;3;41;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 42;Otros Ingresos;true;2;4;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
@@ -108,8 +108,8 @@
 4302;Intereses Ganados en Cuentas Corrientes;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 4303;Dividendos;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 4304;Descuentos Otorgados;false;3;43;Ingresos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
-51;Devoluciones y Descuentos;true;3;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
-5101;Devoluciones y Descuentos de Materiales;true;3;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+51;Devoluciones y Descuentos;true;3;0;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
+5101;Devoluciones y Descuentos de Materiales;true;3;0;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 51013;Devoluciones sobre Compras de Materiales;false;4;5101;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 51014;Descuentos Sobre Compras de Materiales;false;4;5101;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0
 52;Gastos Generales y Administrativos;true;2;5;Gastos;09/12/2024;03:01:24 p.m.;0.0;0.0;0.0

@@ -33,7 +33,8 @@ public class Man_CatalogoCuentaEditController implements Initializable {
     public void getCuenta(int nroCuenta1, String desCuenta1, boolean tipoCuenta1, int lvlCuenta1, int ctaPadre1, String grpCuenta1, String fCreacion1, String hCreacion1, float DebitoAc1, float CreditoAc1, float BalanceCta1, boolean esCPadre){
         this.txtf_nCuenta.setText(String.valueOf(nroCuenta1));
         this.txtf_desCuenta.setText(desCuenta1);
-        this.txtf_Tipo.setText(String.valueOf(tipoCuenta1));
+        String tipo = String.valueOf(tipoCuenta1).equals("true") ? "General" : "Detalle";
+        this.txtf_Tipo.setText(tipo);
         this.txtf_Lvl.setText(String.valueOf(lvlCuenta1));
         this.txtf_CuentaPadre.setText(String.valueOf(ctaPadre1));
         this.txtf_Grupo.setText(grpCuenta1);
@@ -45,6 +46,9 @@ public class Man_CatalogoCuentaEditController implements Initializable {
         this.esCuentaPadre = esCPadre;
         this.txtf_desCuentaEdit.setText(desCuenta1);
         this.txtf_CuentaPadre.setText(String.valueOf(ctaPadre1));
+        if (esCuentaPadre){
+            cbox_tipo.setDisable(true);
+        }
     }
 
     public void SaveChanges(){
